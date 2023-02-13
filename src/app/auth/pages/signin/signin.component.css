@@ -1,0 +1,77 @@
+/* Titulo del form */
+h2{
+    font-family: sans-serif;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* Input del Nombre y Apellido */
+.InputNombre, .InputApellido{
+    font-family: sans-serif;
+    padding: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+
+/* Input del Email */
+.InputCorreo{
+    font-family: sans-serif;
+    padding: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+
+/* Input de la Contraseña */
+.InputPassword{
+    font-family: sans-serif;
+    padding: 5px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    font-size: 140%;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+::placeholder{
+    opacity: 0.6;
+}
+
+/* Boton para Registrarse */
+.BotonRegistrarse{
+    font-family: sans-serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    border-radius: 15px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(106, 119, 160);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.BotonRegistrarse:hover{
+    background-color: rgb(17, 9, 131);
+}
+
+/* Link para ir al login */
+.Login{
+    padding-top: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+/* Divicion Total */
+.divPrincipal{
+    position: absolute;
+    top: 15%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    max-width: 460px;
+}
+
+/* Division del Formulario */
+.divForm{
+    padding: 35px;
+    padding-top: 20px;
+    border-radius: 15px;
+    max-width: 100%;
+    background-color: white;
+    opacity: 95%;
+}

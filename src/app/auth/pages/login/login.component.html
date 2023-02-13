@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div>
+    <h1>
+        <!-- 🆂🅷🅾🅶🆄🅽 -->
+        ╰⁔╯ 𝔖𝔥𝔬𝔤𝔲𝔫 ╰⁔╯
+    </h1>
+
+    <input
+        class="InputCorreo"
+        type="email"
+        formControlName="email"
+        placeholder="Ingrese Su Email"
+    >
+
+    <input
+        class="InputPassword"
+        type="password"
+        formControlName="password"
+        placeholder="Ingrese Su Contraseña"
+    >
+
+    <input
+        class="BotonIniciarSesion"
+        type="submit"
+        value="Iniciar Sesion"
+    >
+    <!-- [disabled]="miFormularioLogin.invalid" -->
+
+    <div class="Signin">
+        <span>
+            ¿No tiene Una Cuenta?. <a routerLink="/auth/signin"> Registrese </a>
+        </span>
+    </div>
+</div>

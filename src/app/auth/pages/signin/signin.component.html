@@ -1,1 +1,41 @@
-<p>signin works!</p>
+<div>
+    <h2>Formulario de Registro</h2>
+
+    <input
+        class="InputNombre"
+        type="text"
+        formControlName="nombre"
+        placeholder="Ingrese su Nombre(s)"
+    >
+
+    <input
+        class="InputApellido"
+        type="text"
+        formControlName="apellido"
+        placeholder="Ingrese su Apellido(s)"
+    >
+
+    <input
+        class="InputCorreo"
+        type="email"
+        formControlName="email"
+        placeholder="Ingrese su Email"
+    >
+
+    <input
+        class="InputPassword"
+        type="password"
+        formControlName="password"
+        placeholder="Ingrese su Contraseña(Min. 6 caracteres)"
+    >
+
+    <input class="BotonRegistrarse" type="submit" value="Registrarse">
+
+    <!-- [disabled]="miFormularioSignin.invalid -->
+    
+    <div class="Login">
+        <span>
+            ¿Ya Tiene Una Cuenta?. <a routerLink="/auth/login"> Inicie Sesion </a>
+        </span>
+    </div>
+</div>
