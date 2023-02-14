@@ -1,6 +1,6 @@
-<div>
+<form [formGroup]="formularioLogin" (ngSubmit)="Login()">
+    
     <h1>
-        <!-- 🆂🅷🅾🅶🆄🅽 -->
         ╰⁔╯ 𝔖𝔥𝔬𝔤𝔲𝔫 ╰⁔╯
     </h1>
 
@@ -18,11 +18,9 @@
         placeholder="Ingrese Su Contraseña"
     >
 
-    <input
-        class="BotonIniciarSesion"
-        type="submit"
-        value="Iniciar Sesion"
-    >
+    <button class="BotonIniciarSesion" type="submit">
+        Iniciar Sesion
+    </button>
     <!-- [disabled]="miFormularioLogin.invalid" -->
 
     <div class="Signin">
@@ -30,4 +28,4 @@
             ¿No tiene Una Cuenta?. <a routerLink="/auth/signin"> Registrese </a>
         </span>
     </div>
-</div>
+</form>

@@ -1,4 +1,5 @@
-<div>
+<form [formGroup]="formularioSignin" (ngSubmit)="SignIn()">
+
     <h2>Formulario de Registro</h2>
 
     <input
@@ -26,10 +27,12 @@
         class="InputPassword"
         type="password"
         formControlName="password"
-        placeholder="Ingrese su Contraseña(Min. 6 caracteres)"
+        placeholder="Ingrese su Contraseña(Min. 8 caracteres)"
     >
 
-    <input class="BotonRegistrarse" type="submit" value="Registrarse">
+    <button class="BotonRegistrarse" type="submit">
+        Registrarse
+    </button>
 
     <!-- [disabled]="miFormularioSignin.invalid -->
     
@@ -38,4 +41,4 @@
             ¿Ya Tiene Una Cuenta?. <a routerLink="/auth/login"> Inicie Sesion </a>
         </span>
     </div>
-</div>
+</form>
