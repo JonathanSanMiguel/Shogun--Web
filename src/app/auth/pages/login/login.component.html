@@ -4,24 +4,38 @@
         ╰⁔╯ 𝔖𝔥𝔬𝔤𝔲𝔫 ╰⁔╯
     </h1>
 
-    <input
-        class="InputCorreo"
-        type="email"
-        formControlName="email"
-        placeholder="Ingrese Su Email"
-    >
+    <!-- Input Correo -->
+    <div class="divCorreo">
+        <i class="fa-solid fa-envelope fa-xl"></i>
+        <input
+            class="InputCorreo"
+            type="email"
+            formControlName="email"
+            placeholder="Ingrese Su Email"
+        >
+    </div>
+    <span class="alerta" *ngIf="ValidarCampo('email')">
+        *Ingrese Un Correo Valido
+    </span>
 
-    <input
-        class="InputPassword"
-        type="password"
-        formControlName="password"
-        placeholder="Ingrese Su Contraseña"
-    >
+    <!-- Input Contraseña -->
+    <div class="divPassword">
+        <i class="fa-solid fa-key fa-xl"></i>
+        <input
+            class="InputPassword"
+            type="password"
+            formControlName="password"
+            placeholder="Ingrese Su Contraseña"
+        >
+    </div>
+    <span class="alerta" *ngIf="ValidarCampo('password')">
+        *Ingrese Una Contraseña Valida
+    </span>
 
+    <!-- Boton Login -->
     <button class="BotonIniciarSesion" type="submit">
         Iniciar Sesion
     </button>
-    <!-- [disabled]="miFormularioLogin.invalid" -->
 
     <div class="Signin">
         <span>

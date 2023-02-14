@@ -5,8 +5,7 @@ h1{
     padding-bottom: 25px;
 }
 
-/* Input del Correo */
-.InputCorreo{
+/* .InputCorreo{
     font-family: sans-serif;
     padding: 5px;
     width: 100%;
@@ -14,23 +13,60 @@ h1{
     border-left: none;
     border-right: none;
     box-sizing: border-box;
-    font-size: 140%;
-    margin-top: 10px;
-    margin-bottom: 28px;
+    font-size: 130%;
+}
+.divCorreo{
+    margin-top: 15px;
+    margin-bottom: 35px;
+} */
+
+/* Input del Correo */
+.divCorreo {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 50px;
+}
+.divCorreo i {
+    display: inline;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divCorreo input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 21px;
+    vertical-align: middle;
 }
 
 /* Input de la Contraseña */
-.InputPassword{
-    font-family: sans-serif;
-    padding: 5px;
-    width: 100%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-sizing: border-box;
-    font-size: 140%;
-    margin-top: 10px;
-    margin-bottom: 28px;
+.divPassword {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 50px;
+}
+.divPassword i {
+    display: inline;
+    font-size: 21px;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divPassword input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 21px;
+    vertical-align: middle;
 }
 ::placeholder{
     opacity: 0.6;
@@ -47,10 +83,9 @@ h1{
     border: none;
     color: rgb(255, 255, 255);
     background-color: rgb(106, 119, 160);
-    margin-top: 30px;
+    margin-top: 55px;
     margin-bottom: 6%;
     cursor: pointer;
-    
 }
 .BotonIniciarSesion:hover{
     background-color: rgb(30, 39, 141);
@@ -65,4 +100,11 @@ h1{
     padding-top: 13px;
     font-family: sans-serif;
     text-align: center;
+}
+
+/* Span de alerta cuando hay un campo invalido */
+.alerta{
+    color: red;
+    font-size: 17px;
+    font-family: sans-serif;
 }
