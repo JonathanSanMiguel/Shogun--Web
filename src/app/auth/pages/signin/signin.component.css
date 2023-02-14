@@ -5,46 +5,100 @@ h2{
     padding-bottom: 15px;
 }
 
-/* Input del Nombre y Apellido */
-.InputNombre, .InputApellido{
-    font-family: sans-serif;
-    padding: 5px;
-    width: 100%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-sizing: border-box;
-    font-size: 140%;
-    margin-top: 10px;
-    margin-bottom: 28px;
+/* Input Nombre */
+.divNombre {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 40px;
+}
+.divNombre i {
+    display: inline;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divNombre input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 19px;
+    vertical-align: middle;
 }
 
-/* Input del Email */
-.InputCorreo{
-    font-family: sans-serif;
-    padding: 5px;
-    width: 100%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-sizing: border-box;
-    font-size: 140%;
-    margin-top: 10px;
-    margin-bottom: 28px;
+/* Input Apellido */
+.divApellido {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 40px;
+}
+.divApellido i {
+    display: inline;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divApellido input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 19px;
+    vertical-align: middle;
+}
+
+/* Input Correo */
+.divCorreo {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 40px;
+}
+.divCorreo i {
+    display: inline;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divCorreo input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 19px;
+    vertical-align: middle;
 }
 
 /* Input de la Contraseña */
-.InputPassword{
-    font-family: sans-serif;
-    padding: 5px;
-    width: 100%;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-sizing: border-box;
-    font-size: 140%;
-    margin-top: 10px;
-    margin-bottom: 28px;
+.divPassword {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+    margin-top: 40px;
+}
+.divPassword i {
+    display: inline;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divPassword input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 19px;
+    vertical-align: middle;
 }
 ::placeholder{
     opacity: 0.6;
@@ -61,12 +115,16 @@ h2{
     border: none;
     color: rgb(255, 255, 255);
     background-color: rgb(106, 119, 160);
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 20px;
     cursor: pointer;
 }
 .BotonRegistrarse:hover{
     background-color: rgb(17, 9, 131);
+}
+.BotonRegistrarse:active{
+    background-color: aliceblue;
+    color: black;
 }
 
 /* Link para ir al login */
@@ -74,4 +132,11 @@ h2{
     padding-top: 20px;
     font-family: sans-serif;
     text-align: center;
+}
+
+/* Span de alerta cuando hay un campo invalido */
+.alerta{
+    color: red;
+    font-size: 17px;
+    font-family: sans-serif;
 }

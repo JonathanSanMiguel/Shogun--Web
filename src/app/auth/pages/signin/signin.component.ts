@@ -16,15 +16,22 @@ export class SigninComponent {
   ) {}
 
   formularioSignin: FormGroup = this.formbuilder.group({
-    nombre: [, [Validators.required, Validators.maxLength(10)]],
-    apellido: [, [Validators.required, Validators.maxLength(15)]],
+    nombre: [, [Validators.required, Validators.maxLength(20)]],
+    apellido: [, [Validators.required, Validators.maxLength(30)]],
     email: [, [Validators.required, Validators.email]],
     password: [, [Validators.required, Validators.minLength(8)]]
   })
 
   SignIn(): void {
-    console.log(this.formularioSignin.value)
-    this.router.navigateByUrl('/dashboard/galery')
+    if (this.formularioSignin.invalid) {
+      this.formularioSignin.markAllAsTouched()
+    } else {
+      console.log(this.formularioSignin.value)
+    }
+    //this.router.navigateByUrl('/dashboard/galery')
   }
 
+  ValidarCampo(campo: string) {
+    return this.formularioSignin.controls[campo].errors && this.formularioSignin.controls[campo].touched
+  }
 }

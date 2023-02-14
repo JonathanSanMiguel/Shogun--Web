@@ -2,33 +2,57 @@
 
     <h2>Formulario de Registro</h2>
 
-    <input
-        class="InputNombre"
-        type="text"
-        formControlName="nombre"
-        placeholder="Ingrese su Nombre(s)"
-    >
+    <!-- Input Nombre -->
+    <div class="divNombre">
+        <i class="fa-solid fa-user fa-xl"></i>
+        <input
+            type="text"
+            formControlName="nombre"
+            placeholder="Ingrese su Nombre(s)"
+        >
+    </div>
+    <span class="alerta" *ngIf="ValidarCampo('nombre')">
+        *Ingrese Un Nombre Valido
+    </span>
 
-    <input
-        class="InputApellido"
-        type="text"
-        formControlName="apellido"
-        placeholder="Ingrese su Apellido(s)"
-    >
+    <!-- Input Apellido -->
+    <div class="divApellido">
+        <i class="fa-solid fa-people-roof fa-xl"></i>
+        <input
+            type="text"
+            formControlName="apellido"
+            placeholder="Ingrese su Apellido(s)"
+        >
+    </div>
+    <span class="alerta" *ngIf="ValidarCampo('apellido')">
+        *Ingrese Un Apellido Valido
+    </span>
 
-    <input
-        class="InputCorreo"
-        type="email"
-        formControlName="email"
-        placeholder="Ingrese su Email"
-    >
+    <!-- Input Correo -->
+    <div class="divCorreo">
+        <i class="fa-solid fa-at fa-xl"></i>
+        <input
+            type="email"
+            formControlName="email"
+            placeholder="Ingrese su Email"
+        >
+    </div>
+    <span class="alerta" *ngIf="ValidarCampo('email')">
+        *Ingrese Un Correo Valido
+    </span>
 
-    <input
-        class="InputPassword"
-        type="password"
-        formControlName="password"
-        placeholder="Ingrese su Contraseña (Min. 8 caracteres)"
-    >
+    <!-- Input Contraseña -->
+    <div class="divPassword">
+        <i class="fa-solid fa-key fa-xl"></i>
+        <input
+            type="password"
+            formControlName="password"
+            placeholder="Ingrese su Contraseña"
+        >
+    </div>
+    <span class="alerta" *ngIf="ValidarCampo('password')">
+        *Ingrese Minimo 8 caracteres
+    </span>
 
     <button class="BotonRegistrarse" type="submit">
         Registrarse
