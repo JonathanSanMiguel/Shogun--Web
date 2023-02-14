@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<div class="navbar">
+    <p> Esta pantalla solo funciona si estas autenticado </p>
+
+    <h4> User Info </h4>
+
+    <pre> {{usuario.nombre | titlecase}}, {{usuario.apellido | titlecase}} </pre>
+
+    <button (click)="LogOut()">
+        Cerrar sesion
+    </button>
+</div>

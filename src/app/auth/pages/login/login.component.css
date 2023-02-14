@@ -55,6 +55,10 @@ h1{
 .BotonIniciarSesion:hover{
     background-color: rgb(30, 39, 141);
 }
+.BotonIniciarSesion:active{
+    background-color: aliceblue;
+    color: black;
+}
 
 /* Link para ir al SignIn */
 .Signin{
