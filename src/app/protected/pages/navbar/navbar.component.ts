@@ -12,11 +12,14 @@ export class NavbarComponent {
 
   constructor(private router: Router, private service: WorkService) { }
 
+  // Obtiene los datos del usuario
+  // que inicio sesion.
   get usuario() {
     return this.service.userAuth
   }
 
   LogOut(){
+    this.service.LogOut()
     this.router.navigateByUrl('./auth/login')
   }
 

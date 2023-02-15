@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { AuthResponse, Usuario } from '../interfaces/auth.interface';
 import { map, catchError, tap } from 'rxjs/operators';
-import { of } from 'rxjs'
+import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -61,12 +61,33 @@ export class AuthService {
   }
 
   // Valida con el BackEnd, El JsonWebToken.
-  ValidarJWToken() {
+  ValidarJWToken(): Observable<boolean> {
 
     const Url: string = `${this.Api_Uri}/renew`
 
-    return this.http.get(Url)
+    const headers = new HttpHeaders().set(
+      'X-Token', localStorage.getItem('JsonWebToken') || ''
+    )
 
+    return this.http.get<AuthResponse>(Url, {headers}).pipe(
+      map(
+        resp => {
+          // Guarda el JsonWebToken en el LocalStorage.
+          localStorage.setItem('JsonWebToken', resp.JWtoken)
+
+          // Asigna los datos de la response
+          // al objeto _usuario.
+          this._usuario = {
+            uid: resp.uid,
+            nombre: resp.nombre,
+            apellido: resp.apellido
+          }
+
+          return resp.status
+        }
+      ),
+      catchError(err => of(false))
+    )
   }
 
 }

@@ -11,4 +11,8 @@ export class WorkService {
   get userAuth() {
     return this.authservice.user
   }
+
+  LogOut() {
+    localStorage.removeItem('JsonWebToken')
+  }
 }

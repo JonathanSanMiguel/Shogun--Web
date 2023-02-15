@@ -32,7 +32,8 @@ export class SigninComponent {
     email: [,
       [
         Validators.required,
-        Validators.email
+        Validators.email,
+        Validators.maxLength(30)
       ]
     ],
     password: [,
