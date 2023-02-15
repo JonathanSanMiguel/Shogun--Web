@@ -100,8 +100,23 @@ h2{
     font-size: 19px;
     vertical-align: middle;
 }
-::placeholder{
+::placeholder {
     opacity: 0.6;
+}
+input:invalid {
+    border: 2px solid red;
+    animation: shake 0.2s 2;
+}
+@keyframes shake {
+    25% {
+        transform: translate(6px 0);
+    }
+    50% {
+        transform: translate(-6px 0);
+    }
+    75% {
+        transform: translate(6px 0);
+    }
 }
 
 /* Boton para Registrarse */

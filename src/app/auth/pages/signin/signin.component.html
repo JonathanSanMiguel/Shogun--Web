@@ -1,4 +1,4 @@
-<form [formGroup]="formularioSignin" (ngSubmit)="SignIn()">
+<form class="animate__animated animate__fadeIn" [formGroup]="formularioSignin" (ngSubmit)="SignIn()">
 
     <h2>Formulario de Registro</h2>
 
@@ -12,7 +12,7 @@
         >
     </div>
     <span class="alerta" *ngIf="ValidarCampo('nombre')">
-        *Ingrese Un Nombre Valido
+        *Ingrese un Nombre Valido
     </span>
 
     <!-- Input Apellido -->
@@ -25,7 +25,7 @@
         >
     </div>
     <span class="alerta" *ngIf="ValidarCampo('apellido')">
-        *Ingrese Un Apellido Valido
+        *Ingrese un Apellido Valido
     </span>
 
     <!-- Input Correo -->
@@ -38,7 +38,7 @@
         >
     </div>
     <span class="alerta" *ngIf="ValidarCampo('email')">
-        *Ingrese Un Correo Valido
+        *Ingrese un Correo Valido
     </span>
 
     <!-- Input Contraseña -->
@@ -54,11 +54,11 @@
         *Ingrese Minimo 8 caracteres
     </span>
 
+    <!-- Boton registrarse -->
     <button class="BotonRegistrarse" type="submit">
+        <i class="fa-solid fa-clipboard-check"></i>
         Registrarse
     </button>
-
-    <!-- [disabled]="miFormularioSignin.invalid -->
     
     <div class="Login">
         <span>

@@ -16,10 +16,32 @@ export class SigninComponent {
   ) {}
 
   formularioSignin: FormGroup = this.formbuilder.group({
-    nombre: [, [Validators.required, Validators.maxLength(20)]],
-    apellido: [, [Validators.required, Validators.maxLength(30)]],
-    email: [, [Validators.required, Validators.email]],
-    password: [, [Validators.required, Validators.minLength(8)]]
+    nombre: [,
+      [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z ]*$'),
+        Validators.maxLength(25)]
+      ],
+    apellido: [,
+      [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z ]*$'),
+        Validators.maxLength(30)
+      ]
+    ],
+    email: [,
+      [
+        Validators.required,
+        Validators.email
+      ]
+    ],
+    password: [,
+      [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z]*$'),
+        Validators.minLength(8)
+      ]
+    ]
   })
 
   SignIn(): void {
@@ -27,8 +49,8 @@ export class SigninComponent {
       this.formularioSignin.markAllAsTouched()
     } else {
       console.log(this.formularioSignin.value)
+      //this.router.navigateByUrl('/dashboard/galery')
     }
-    //this.router.navigateByUrl('/dashboard/galery')
   }
 
   ValidarCampo(campo: string) {
