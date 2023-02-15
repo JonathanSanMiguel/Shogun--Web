@@ -29,7 +29,7 @@ export class LoginComponent {
     password: ['bobhazalgo', 
       [
         Validators.required,
-        Validators.pattern('^[a-zA-Z ]*$'),
+        Validators.pattern('^[a-zA-Z0-9]*$'),
         Validators.minLength(8),
         Validators.maxLength(30)
       ]
@@ -40,13 +40,13 @@ export class LoginComponent {
     if (this.formularioLogin.invalid) {
       this.formularioLogin.markAllAsTouched()
     } else {
-      // Envia los datos que tenga el formulario, al servicio, 
+      // Envia los datos que tenga el formulario, al servicio.
       this.service.Login(this.formularioLogin.value).subscribe(
         resp => {
-  
+
           // Valida si la resp es 'true'.
           if (resp === true) {
-  
+
             // Mandara una alerta de inicio de sesion.
             Swal.fire({
               position: 'center',
@@ -55,7 +55,7 @@ export class LoginComponent {
               showConfirmButton: false,
               timer: 2500
             })
-  
+
             // Redireccionara al usuario a la 'galeria'
             this.router.navigateByUrl('/dashboard/galery')
           } else {

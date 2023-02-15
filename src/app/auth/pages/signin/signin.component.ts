@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-signin',
@@ -12,15 +14,17 @@ export class SigninComponent {
 
   constructor(
     private formbuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private service: AuthService
   ) {}
 
+  // FormGroup Reactivo para los campos del Login.
   formularioSignin: FormGroup = this.formbuilder.group({
     nombre: [,
       [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
-        Validators.maxLength(25)]
+        Validators.maxLength(30)]
       ],
     apellido: [,
       [
@@ -39,18 +43,40 @@ export class SigninComponent {
     password: [,
       [
         Validators.required,
-        Validators.pattern('^[a-zA-Z]*$'),
-        Validators.minLength(8)
+        Validators.pattern('^[a-zA-Z0-9]*$'),
+        Validators.minLength(8),
+        Validators.maxLength(30)
       ]
     ]
   })
 
-  SignIn(): void {
+  SignIn() {
     if (this.formularioSignin.invalid) {
       this.formularioSignin.markAllAsTouched()
     } else {
-      console.log(this.formularioSignin.value)
-      //this.router.navigateByUrl('/dashboard/galery')
+
+      this.service.Sigin(this.formularioSignin.value).subscribe(
+        resp => {
+          // Valida si la resp es 'true'.
+          if (resp === true) {
+
+            // Mandara una alerta de inicio de sesion.
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Te Registraste Correctamente',
+              showConfirmButton: false,
+              timer: 2500
+            })
+  
+            // Redireccionara al usuario a la 'galeria'
+            this.router.navigateByUrl('/dashboard/galery')
+          } else {
+            // SI hay error, mandara una alerta, con el error.
+            Swal.fire('Error', resp, 'error')
+          }
+        }
+      )
     }
   }
 

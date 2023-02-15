@@ -18,7 +18,7 @@ export class AuthService {
   // Propiedad para guardar los datos
   // del usuario que inicio sesion.
   private _usuario!: Usuario
-  
+
   // get para obtener desde otra clase el
   // objeto con los datos del usuario.
   get user() {
@@ -26,10 +26,43 @@ export class AuthService {
   }
 
   // Metodo para iniciar sesion.
-  Login(data: string) {
+  Login(data: AuthResponse) {
 
     // EndPoint para el Login.
     const Url: string = `${this.Api_Uri}/login`
+
+    // Peticion POST con el URL, y el objeto con los datos.
+    return this.http.post<AuthResponse>(Url, data).pipe(
+
+      // 'tap' sirve para validar primero la response
+      // antes de continuar.
+      tap(resp => {
+        if (resp.status) {
+          
+          // Guarda el JsonWebToken en el LocalStorage.
+          localStorage.setItem('JsonWebToken', resp.JWtoken)
+
+          // Asigna los datos de la response
+          // al objeto _usuario.
+          this._usuario = {
+            uid: resp.uid,
+            nombre: resp.nombre,
+            apellido: resp.apellido
+          }
+        }
+      }),
+      // Transmuta la response para solo mandar
+      // la propiedad 'status'.
+      map(resp => resp.status),
+
+      // Si hay error, mandara el mensaje del error.
+      catchError(err => of(err.error.message))
+    )
+  }
+
+  Sigin(data: AuthResponse) {
+    // EndPoint para el Login.
+    const Url: string = `${this.Api_Uri}/newUser`
 
     // Peticion POST con el URL, y el objeto con los datos.
     return this.http.post<AuthResponse>(Url, data).pipe(
@@ -76,7 +109,7 @@ export class AuthService {
           localStorage.setItem('JsonWebToken', resp.JWtoken)
 
           // Asigna los datos de la response
-          // al objeto _usuario.
+          // al objeto '_usuario'.
           this._usuario = {
             uid: resp.uid,
             nombre: resp.nombre,
