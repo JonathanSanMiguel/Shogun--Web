@@ -19,7 +19,7 @@ export class ValidarJwtGuard implements CanActivate, CanLoad {
       })
     )
   }
-    
+
   canLoad(): Observable<boolean> | boolean {
     return this.service.ValidarJWToken().pipe(
       tap(resp => {

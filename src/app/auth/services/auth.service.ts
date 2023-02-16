@@ -38,17 +38,8 @@ export class AuthService {
       // antes de continuar.
       tap(resp => {
         if (resp.status) {
-          
           // Guarda el JsonWebToken en el LocalStorage.
           localStorage.setItem('JsonWebToken', resp.JWtoken)
-
-          // Asigna los datos de la response
-          // al objeto _usuario.
-          this._usuario = {
-            uid: resp.uid,
-            nombre: resp.nombre,
-            apellido: resp.apellido
-          }
         }
       }),
       // Transmuta la response para solo mandar
@@ -71,17 +62,8 @@ export class AuthService {
       // antes de continuar.
       tap(resp => {
         if (resp.status) {
-          
           // Guarda el JsonWebToken en el LocalStorage.
           localStorage.setItem('JsonWebToken', resp.JWtoken)
-
-          // Asigna los datos de la response
-          // al objeto _usuario.
-          this._usuario = {
-            uid: resp.uid,
-            nombre: resp.nombre,
-            apellido: resp.apellido
-          }
         }
       }),
       // Transmuta la response para solo mandar

@@ -1,33 +1,35 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanLoad, Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
-import { AuthService } from '../../auth/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfirmarJwtGuard implements CanActivate, CanLoad {
 
-  constructor(private service: AuthService, private router: Router) { }
+  constructor(private router: Router) { }
 
-  canActivate(): Observable<boolean> | boolean {
-    return this.service.ValidarJWToken().pipe(
-      tap(resp => {
-        if (resp) {
-          this.router.navigateByUrl('/dashboard/galery')
-        }
-      })
-    )
+  canActivate(): boolean {
+
+    const token = localStorage.getItem('JsonWebToken')
+
+    if (token) {
+      this.router.navigate(['/dashboard/galery'])
+      return false
+    }
+
+    return true
   }
 
-  canLoad(): Observable<boolean> | boolean {
-    return this.service.ValidarJWToken().pipe(
-      tap(resp => {
-        if (resp) {
-          this.router.navigateByUrl('/dashboard/galery')
-        }
-      })
-    )
+  canLoad(): boolean {
+
+    const token = localStorage.getItem('JsonWebToken')
+
+    if (token) {
+      this.router.navigate(['/dashboard/galery'])
+      return false
+    }
+
+    return true
   }
 
 }

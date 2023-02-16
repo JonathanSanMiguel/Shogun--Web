@@ -68,7 +68,7 @@ export class SigninComponent {
               showConfirmButton: false,
               timer: 2500
             })
-  
+
             // Redireccionara al usuario a la 'galeria'
             this.router.navigateByUrl('/dashboard/galery')
           } else {
