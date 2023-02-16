@@ -1,11 +1,20 @@
-<div class="navbar">
-    <p> Esta pantalla solo funciona si estas autenticado </p>
+<nav>
+    <div class="nav-left">
+        <button type="button" routerLink="/dashboard/galery">
+            Galeria
+        </button>
+        
+        <button type="button" routerLink="/dashboard/form">
+            Agregar un nuevo Registro
+        </button>
+    </div>
 
-    <h4> User Info </h4>
-
-    <pre> {{usuario.nombre | titlecase}}, {{usuario.apellido | titlecase}} </pre>
-
-    <button type="button" (click)="LogOut()">
-        Cerrar sesion
-    </button>
-</div>
+    <div class="nav-right">
+        <span>
+            {{usuario.nombre | titlecase}}, {{usuario.apellido | titlecase}} 
+        </span>
+        <button type="button" (click)="LogOut()">
+            Cerrar Sesion
+        </button>
+    </div>
+</nav>
