@@ -49,7 +49,7 @@ export class LoginComponent {
 
             // Mandara una alerta de inicio de sesion.
             Swal.fire({
-              position: 'center',
+              position: 'top-right',
               icon: 'success',
               title: 'Iniciaste Sesion Correctamente',
               showConfirmButton: false,

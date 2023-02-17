@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+/*? Scroll Bar */
+/* Anchura de la barra */
+*::-webkit-scrollbar {
+    width: 10px;
+    width: 10px;
+}
+
+/** Base de la ScrollBar */
+/* En espera */
+*::-webkit-scrollbar-track {
+    /* border-radius: 5px; */
+    background-color: #DFE9EB;
+}
+/* Cuando el mause pase por arriba */
+*::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+}
+/* Cuando se le de click */
+*::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+}
+
+/** Linea Desplazable de la scrollBar */
+/* En espera */
+*::-webkit-scrollbar-thumb {
+    /* border-radius: 5px; */
+    background-color: #2d362c;
+}
+/* Cuando el mause pase por arriba */
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #b92829;
+}
+/* Cuando se le de click */
+*::-webkit-scrollbar-thumb:active {
+    background-color: #742929;
+}

@@ -1,0 +1,16 @@
+export interface WorkResponse {
+  image: Image;
+  factura: Image;
+  _id: string;
+  nombre: string;
+  descripcion: string;
+  folio: number;
+  fecha: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Image {
+  public_id: string;
+  secure_url: string;
+}
