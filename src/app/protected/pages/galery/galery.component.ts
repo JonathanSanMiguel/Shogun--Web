@@ -15,7 +15,6 @@ export class GaleryComponent implements OnInit {
   constructor(private service: WorkService) {}
 
   ngOnInit() {
-
     ////////? Falta definir el tipo de dato
     this.service.Read().pipe(
 
@@ -25,7 +24,10 @@ export class GaleryComponent implements OnInit {
     )
     .subscribe()
     //////////? Falta definir el tipo de dato
+  }
 
+  verRegistro(data: WorkResponse){
+    console.log(data)
   }
 
 }

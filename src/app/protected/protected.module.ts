@@ -8,6 +8,8 @@ import { GaleryComponent } from './pages/galery/galery.component';
 import { ModalComponent } from './pages/modal/modal.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
   ],
   imports: [
     CommonModule,
-    ProtectedRoutingModule
+    ProtectedRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProtectedModule { }

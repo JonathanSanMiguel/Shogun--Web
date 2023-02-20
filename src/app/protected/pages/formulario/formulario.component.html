@@ -1,1 +1,81 @@
-<p>formulario works!</p>
+<!-- Form -->
+<div class="cardFull">
+
+    <h2> 
+        Ingrese los datos del empleado <i class="fa-solid fa-person-circle-plus"></i> 
+    </h2>
+    <hr>
+  
+    <form class="formCreate" [formGroup]="formularioCreate" (ngSubmit)="guardar()">
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-user"></i> 
+                Imagen: 
+            </label>
+            <input type="file" formControlName="image" placeholder="hola">
+            <span class="alerta" *ngIf="ValidarCampo('image')">
+                *Debe contener al menos 3 letras
+            </span>
+        </div>
+  
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-people-group"></i>
+                nombre: 
+            </label>
+            <input type="text" formControlName="nombre" placeholder="Ingrese el nombre">
+            <span class="alerta" *ngIf="ValidarCampo('nombre')">
+                *Debe Contener al Menos 4 Letras
+            </span>
+        </div>
+  
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-building"></i>
+                Descripcion:
+            </label>
+            <input type="text" formControlName="descripcion" placeholder="Ingrese la desc">
+            <span class="alerta" *ngIf="ValidarCampo('descripcion')">
+                *Debe Contener al Menos 3 Letras
+            </span>
+        </div>
+    
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                Fecha: 
+            </label>
+            <input type="date" formControlName="fecha" placeholder="Ingrese la fecha">
+            <span class="alerta" *ngIf="ValidarCampo('fecha')">
+                *Debe contener un numero positivo
+            </span>
+        </div>
+  
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                Folio: 
+            </label>
+            <input type="number" formControlName="folio" placeholder="Genere el Folio">
+            <span class="alerta" *ngIf="ValidarCampo('folio')">
+                *Debe contener un numero positivo
+            </span>
+        </div>
+
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                Factura: 
+            </label>
+            <input type="file" formControlName="factura" placeholder="Ingrese el Salario">
+            <span class="alerta" *ngIf="ValidarCampo('factura')">
+                *Debe contener un numero positivo
+            </span>
+        </div>
+  
+        <button class="btnAgregar" type="submit"> 
+            Agregar <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+    </form>
+  </div>
+  

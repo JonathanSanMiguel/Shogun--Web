@@ -6,6 +6,8 @@ nav {
     align-items: center;
     padding: 10px;
     border-radius: 7px;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 .nav-left {
@@ -14,7 +16,7 @@ nav {
 }
 
 .nav-left button {
-    background-color: #4CAF50;
+    background-color: #b92829;
     border: none;
     color: #fff;
     padding: 10px;

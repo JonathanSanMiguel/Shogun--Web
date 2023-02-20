@@ -38,6 +38,14 @@ export class WorkService implements OnInit {
     return this.http.get<WorkResponse[]>(Url, {headers})
   }
 
+  create(data: WorkResponse) {
+    
+    const Url = `${this.Api_Uri}/create`
+
+    return this.http.post(Url, data)
+  }
+
+  // Metodo para cerrar sesion
   LogOut() {
     localStorage.removeItem('JsonWebToken')
   }

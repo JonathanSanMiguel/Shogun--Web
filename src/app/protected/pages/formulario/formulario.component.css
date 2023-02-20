@@ -1,0 +1,85 @@
+/* Card Form */
+.cardFull {
+    margin-top: 3%;
+    margin-bottom: 120px;
+    top: 5%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    max-width: 850px;
+    padding-top: 1%;
+}
+h2{
+    color: #b92829;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+hr{
+    max-width: 90%;
+}
+
+
+.formCreate {
+    margin-top: 3%;
+    background-color: #b92829;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.formCreate label {
+    color: #fff;
+    font-size: 19px;
+    font: sans-serif;
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 100%;
+    margin: 4px;
+}
+
+.formCreate input{
+    width: 50%;
+    padding: 8px;
+    margin-top: 9px;
+    border-radius: 5px;
+    border: none;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.divCampo{
+    height: 80px;
+    margin-bottom: 10px;
+}
+::placeholder{
+    opacity: 0.6;
+}
+
+.alerta{
+    color: #fff;
+    background-color: rgb(0, 0, 169);
+    max-width: 100%;
+    font: 16px sans-serif;
+    border-radius: 5px;
+    padding: 2px;
+}
+.btnAgregar{
+    border: none;
+    border-radius: 15px;
+    width: 50%;
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 17px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    background-color: #2d362c;
+    color: #fff;
+    cursor: pointer;
+}
+.btnAgregar:hover{
+    background-color: #aaa;
+    color: #2d362c;
+    border: none;
+}

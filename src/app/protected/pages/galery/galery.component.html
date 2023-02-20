@@ -1,5 +1,10 @@
 <main class="gallery">
     <div class="gallery__item animate__animated animate__zoomIn" *ngFor="let item of registros">
-        <img src="{{item.image.secure_url}}" alt="portada" title="{{item.createdAt | date}}">
+        <img
+            src="{{item.image.secure_url}}"
+            alt="portada"
+            title="{{item.createdAt | date}}"
+            (click)="verRegistro(item)"
+        >
     </div>
 </main>

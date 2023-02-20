@@ -34,7 +34,7 @@ img {
 .gallery__item {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     grid-column: span 2; /* 266px + 17px = 283px */
-    height: 282px;
+    height: 283px;
     transition: 0.4s filter;
 }
 .gallery__item:hover {
@@ -51,17 +51,17 @@ img {
         grid-column: 1 / span 2;
     }
     .gallery {
-        grid-auto-rows: 282px;
+        grid-auto-rows: 283px;
     }
 }
 
-@media screen and (min-width: 505px) and (max-width: 700px ) {
+@media screen and (min-width: 505px) and (max-width: 698px ) {
     .gallery__item:nth-of-type(odd) {
         grid-column: 2 / span 2;
     }
 }
 
-@media screen and (min-width: 701px) and (max-width: 873px ) {
+@media screen and (min-width: 699px) and (max-width: 873px ) {
     .gallery__item:nth-of-type(3n +1) {
         grid-column: 2 / span 2;
     }
