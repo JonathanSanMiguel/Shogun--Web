@@ -1,8 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/services/auth.service';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { WorkResponse }  from '../interfaces/work.interface'
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,11 +39,20 @@ export class WorkService implements OnInit {
     return this.http.get<WorkResponse[]>(Url, {headers})
   }
 
-  create(data: WorkResponse) {
-    
+  create(data: any) {
+
     const Url = `${this.Api_Uri}/create`
 
-    return this.http.post(Url, data)
+    const headers = new HttpHeaders().set(
+      'X-Token', localStorage.getItem('JsonWebToken') || ''
+    )
+
+    return this.http.post<WorkResponse>(Url, data, {headers}).pipe(
+
+      map(resp => resp.status),
+
+      catchError(err => of(err.error.message))
+    )
   }
 
   // Metodo para cerrar sesion

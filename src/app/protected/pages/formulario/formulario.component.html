@@ -1,34 +1,38 @@
 <!-- Form -->
 <div class="cardFull">
-
-    <h2> 
-        Ingrese los datos del empleado <i class="fa-solid fa-person-circle-plus"></i> 
-    </h2>
-    <hr>
   
     <form class="formCreate" [formGroup]="formularioCreate" (ngSubmit)="guardar()">
+        <!-- DIV imagen -->
         <div class="divCampo">
             <label>
                 <i class="fa-solid fa-user"></i> 
-                Imagen: 
+                Imagen del Trabajo: 
             </label>
-            <input type="file" formControlName="image" placeholder="hola">
+            <input
+                type="file"
+                accept="image/jpeg, image/png"
+                formControlName="image"
+                (change)="validarImagen($event)"
+                placeholder="Selecciona una imagen"
+            >
             <span class="alerta" *ngIf="ValidarCampo('image')">
-                *Debe contener al menos 3 letras
+                *Debe subir una imagen
             </span>
         </div>
-  
+
+        <!-- DIV nombre -->
         <div class="divCampo">
             <label>
                 <i class="fa-solid fa-people-group"></i>
-                nombre: 
+                Nombre del Cliente: 
             </label>
             <input type="text" formControlName="nombre" placeholder="Ingrese el nombre">
             <span class="alerta" *ngIf="ValidarCampo('nombre')">
-                *Debe Contener al Menos 4 Letras
+                *Este Campo es Obligatorio
             </span>
         </div>
-  
+
+        <!-- DIV descripcion -->
         <div class="divCampo">
             <label>
                 <i class="fa-solid fa-building"></i>
@@ -36,46 +40,73 @@
             </label>
             <input type="text" formControlName="descripcion" placeholder="Ingrese la desc">
             <span class="alerta" *ngIf="ValidarCampo('descripcion')">
-                *Debe Contener al Menos 3 Letras
-            </span>
-        </div>
-    
-        <div class="divCampo">
-            <label>
-                <i class="fa-solid fa-money-bill-1-wave"></i>
-                Fecha: 
-            </label>
-            <input type="date" formControlName="fecha" placeholder="Ingrese la fecha">
-            <span class="alerta" *ngIf="ValidarCampo('fecha')">
-                *Debe contener un numero positivo
-            </span>
-        </div>
-  
-        <div class="divCampo">
-            <label>
-                <i class="fa-solid fa-money-bill-1-wave"></i>
-                Folio: 
-            </label>
-            <input type="number" formControlName="folio" placeholder="Genere el Folio">
-            <span class="alerta" *ngIf="ValidarCampo('folio')">
-                *Debe contener un numero positivo
+                *Este campo es obligatorio
             </span>
         </div>
 
+        <!-- DIV fecha -->
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                Fecha de Finalizacion: 
+            </label>
+
+            <input
+                type="date"
+                formControlName="fecha"
+                placeholder="Ingrese la fecha"
+                min=""
+                max="today"
+            >
+            <span class="alerta" *ngIf="ValidarCampo('fecha')">
+                *Este Campo es Obligatorio
+            </span>
+        </div>
+
+        <!-- DIV folio -->
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                Generar Folio:
+            </label>
+
+            <input
+                type="number"
+                value="{{folioGenerado}}"
+                formControlName="folio"
+                placeholder="Genera un folio"
+                readonly
+            >
+
+            <button type="button" (click)="generarFolio()">
+                Generar
+            </button>
+
+            <span class="alerta" *ngIf="ValidarCampo('folio')">
+                *Este campo es obligatorio
+            </span>
+        </div>
+
+        <!-- DIV factura -->
         <div class="divCampo">
             <label>
                 <i class="fa-solid fa-money-bill-1-wave"></i>
                 Factura: 
             </label>
-            <input type="file" formControlName="factura" placeholder="Ingrese el Salario">
+            <input
+                type="file"
+                accept="application/pdf, application/msword"
+                formControlName="factura"
+                (change)="validarFactura($event)"
+                placeholder="Ingrese el Salario"
+            >
             <span class="alerta" *ngIf="ValidarCampo('factura')">
-                *Debe contener un numero positivo
+                *Debe subir una Factura en .PDF o .Doc
             </span>
         </div>
-  
-        <button class="btnAgregar" type="submit"> 
+
+        <button class="btnAgregar" type="submit">
             Agregar <i class="fa-solid fa-floppy-disk"></i>
         </button>
     </form>
-  </div>
-  
+</div>

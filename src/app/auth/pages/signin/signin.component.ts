@@ -24,13 +24,13 @@ export class SigninComponent {
       [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
-        Validators.maxLength(30)]
+        Validators.maxLength(50)]
       ],
     apellido: [,
       [
         Validators.required,
         Validators.pattern('^[a-zA-Z ]*$'),
-        Validators.maxLength(30)
+        Validators.maxLength(50)
       ]
     ],
     email: [,

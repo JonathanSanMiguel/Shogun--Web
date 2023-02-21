@@ -1,4 +1,6 @@
 export interface WorkResponse {
+  status: boolean
+  message: string
   image: Image;
   factura: Image;
   _id: string;
