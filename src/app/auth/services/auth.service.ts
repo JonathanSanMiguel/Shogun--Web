@@ -13,7 +13,8 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   // EndPoint del ApiREST.
-  Api_Uri: string = 'http://localhost:4000/gymkhana/auth'
+  //Api_Uri: string = 'http://localhost:4000/gymkhana/auth'
+  Api_Uri: string = 'https://shogun-gymkhana-production.up.railway.app'
 
   // Propiedad para guardar los datos
   // del usuario que inicio sesion.

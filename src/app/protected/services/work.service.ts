@@ -12,7 +12,8 @@ export class WorkService implements OnInit {
 
   constructor(private authservice: AuthService, private http: HttpClient) { }
 
-  Api_Uri: string = 'http://localhost:4000/gymkhana/crud'
+  //Api_Uri: string = 'http://localhost:4000/gymkhana/crud'
+  Api_Uri: string = 'https://shogun-gymkhana-production.up.railway.app'
 
   ngOnInit(): void {
     this.userAuth
