@@ -41,8 +41,7 @@ export class FormularioComponent {
     ],
     fecha: [,
       [
-        Validators.required,
-        Validators.min(20000101)
+        Validators.required
       ]
     ],
     folio: [,
@@ -120,7 +119,7 @@ export class FormularioComponent {
             Swal.fire({
               position: 'top-right',
               icon: 'success',
-              title: resp.message,
+              title: 'Registro Creado',
               showConfirmButton: false,
               timer: 2000
             })
