@@ -1,29 +1,57 @@
 /* Card Form */
 .cardFull {
-    margin-top: 3%;
-    margin-bottom: 120px;
-    top: 5%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    max-width: 850px;
-    padding-top: 1%;
-}
-h2{
-    color: #b92829;
-    width: 100%;
-    text-align: center;
-    font-family: sans-serif;
-    text-transform: capitalize;
-}
-hr{
-    max-width: 90%;
-}
+    box-shadow: 10px 18px 64px 0px rgba(0,0,0,0.75);
+    max-width: 700px;
+    border-radius: 20px;
 
+    display: flex;
+    margin: auto;
+    margin-top: 70px;
+}
 
 .formCreate {
-    margin-top: 3%;
+    display: flex;
+    padding: 30px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.divCampo {
+    flex: 1 0 240px;
+    height: 80px;
+    margin: 10px;
+}
+/* Input del Correo */
+.divCampo {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 7px;
+}
+.divCampo i {
+    display: inline;
+    color: #999;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.divCampo input {
+    display: inline;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 19px;
+    vertical-align: middle;
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: greenyellow;
+}
+
+/* .formCreate {
+    margin-top: 2%;
     background-color: #b92829;
     max-width: 100%;
     padding: 30px;
@@ -49,23 +77,22 @@ hr{
     font-family: sans-serif;
     font-size: 20px;
 }
-.divCampo{
+.divCampo {
     height: 80px;
     margin-bottom: 10px;
 }
-::placeholder{
+::placeholder {
     opacity: 0.6;
-}
+} */
 
 .alerta{
-    color: #fff;
-    background-color: rgb(0, 0, 169);
+    color: red;
     max-width: 100%;
     font: 16px sans-serif;
     border-radius: 5px;
     padding: 2px;
 }
-.btnAgregar{
+/* .btnAgregar {
     border: none;
     border-radius: 15px;
     width: 50%;
@@ -82,4 +109,4 @@ hr{
     background-color: #aaa;
     color: #2d362c;
     border: none;
-}
+} */

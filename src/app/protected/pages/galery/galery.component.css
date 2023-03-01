@@ -37,9 +37,24 @@ img {
     height: 283px;
     transition: 0.4s filter;
 }
-.gallery__item:hover {
-    filter: brightness(0.3);
+/* 
+.gallery:hover img {
+    filter: grayscale();
 }
+
+.gallery__item img:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+} */
+
+.gallery:hover .gallery__item:not(:hover){
+    filter: grayscale(100%);
+    opacity: 0.75;
+}
+ .gallery__item:active {
+    filter: saturate(200%);
+ }
+
 
 .gallery__item:first-of-type {
     grid-column: 2 / span 2;
@@ -84,7 +99,6 @@ img {
         grid-column: 2 / span 2;
     }
 }
-
 
 @media screen and (min-width: 1400px) {
     .gallery__item:nth-of-type(7n +1) {

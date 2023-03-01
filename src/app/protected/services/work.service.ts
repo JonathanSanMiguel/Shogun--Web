@@ -19,7 +19,7 @@ export class WorkService implements OnInit {
     this.userAuth
   }
 
-  // get para obtener los datos del ususario
+  // get para obtener los datos del usuario
   get userAuth() {
     return this.authservice.user
   }

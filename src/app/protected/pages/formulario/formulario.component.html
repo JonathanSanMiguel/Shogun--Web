@@ -15,6 +15,7 @@
                 (change)="validarImagen($event)"
                 placeholder="Selecciona una imagen"
             >
+            <br>
             <span class="alerta" *ngIf="ValidarCampo('image')">
                 *Debe subir una imagen
             </span>
@@ -27,6 +28,7 @@
                 Nombre del Cliente: 
             </label>
             <input type="text" formControlName="nombre" placeholder="Ingrese el nombre">
+            <br>
             <span class="alerta" *ngIf="ValidarCampo('nombre')">
                 *Este Campo es Obligatorio
             </span>
@@ -39,6 +41,7 @@
                 Descripcion:
             </label>
             <input type="text" formControlName="descripcion" placeholder="Ingrese la descripcion">
+            <br>
             <span class="alerta" *ngIf="ValidarCampo('descripcion')">
                 *Este campo es obligatorio
             </span>
@@ -58,6 +61,7 @@
                 min=""
                 max="today"
             >
+            <br>
             <span class="alerta" *ngIf="ValidarCampo('fecha')">
                 *Este Campo es Obligatorio
             </span>
@@ -81,7 +85,7 @@
             <button type="button" (click)="generarFolio()">
                 Generar
             </button>
-
+            <br>
             <span class="alerta" *ngIf="ValidarCampo('folio')">
                 *Este campo es obligatorio
             </span>
@@ -100,12 +104,13 @@
                 (change)="validarFactura($event)"
                 placeholder="Ingrese el Salario"
             >
+            <br>
             <span class="alerta" *ngIf="ValidarCampo('factura')">
                 *Debe subir una Factura en .PDF o .Doc
             </span>
         </div>
 
-        <button class="btnAgregar" type="submit">
+        <button class="divCampo" type="submit">
             Agregar <i class="fa-solid fa-floppy-disk"></i>
         </button>
     </form>
