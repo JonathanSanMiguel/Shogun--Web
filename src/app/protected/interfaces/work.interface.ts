@@ -7,7 +7,7 @@ export interface WorkResponse {
   nombre: string;
   descripcion: string;
   folio: number;
-  fecha: string;
+  fecha: Date;
   createdAt: string;
   updatedAt: string;
 }

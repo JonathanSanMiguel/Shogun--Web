@@ -1,11 +1,11 @@
 <!-- Form -->
-<div class="cardFull">
+<div class="cardFull animate__animated animate__bounceIn">
 
     <form class="formCreate" [formGroup]="formularioCreate" (ngSubmit)="guardar()">
         <!-- DIV imagen -->
         <div class="divCampo">
             <label>
-                <i class="fa-solid fa-user"></i> 
+                <i class="fa-solid fa-image"></i>
                 Imagen del Trabajo: 
             </label>
             <input
@@ -24,7 +24,7 @@
         <!-- DIV nombre -->
         <div class="divCampo">
             <label>
-                <i class="fa-solid fa-people-group"></i>
+                <i class="fa-solid fa-user"></i>
                 Nombre del Cliente: 
             </label>
             <input type="text" formControlName="nombre" placeholder="Ingrese el nombre">
@@ -37,7 +37,7 @@
         <!-- DIV descripcion -->
         <div class="divCampo">
             <label>
-                <i class="fa-solid fa-building"></i>
+                <i class="fa-solid fa-comment-dots"></i>
                 Descripcion:
             </label>
             <input type="text" formControlName="descripcion" placeholder="Ingrese la descripcion">
@@ -50,7 +50,7 @@
         <!-- DIV fecha -->
         <div class="divCampo">
             <label>
-                <i class="fa-solid fa-money-bill-1-wave"></i>
+                <i class="fa-solid fa-calendar-days"></i>
                 Fecha de Finalizacion: 
             </label>
 
@@ -70,7 +70,7 @@
         <!-- DIV folio -->
         <div class="divCampo">
             <label>
-                <i class="fa-solid fa-money-bill-1-wave"></i>
+                <i class="fa-solid fa-hashtag"></i>
                 Generar Folio:
             </label>
 
@@ -94,7 +94,7 @@
         <!-- DIV factura -->
         <div class="divCampo">
             <label>
-                <i class="fa-solid fa-money-bill-1-wave"></i>
+                <i class="fa-solid fa-file-pdf"></i>
                 Factura: 
             </label>
             <input
@@ -106,11 +106,11 @@
             >
             <br>
             <span class="alerta" *ngIf="ValidarCampo('factura')">
-                *Debe subir una Factura en .PDF o .Doc
+                *Debe subir una Factura .PDF o .Doc
             </span>
         </div>
 
-        <button class="divCampo" type="submit">
+        <button  type="submit">
             Agregar <i class="fa-solid fa-floppy-disk"></i>
         </button>
     </form>

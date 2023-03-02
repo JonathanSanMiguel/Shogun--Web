@@ -11,23 +11,33 @@ import { WorkResponse } from '../../interfaces/work.interface';
 export class GaleryComponent implements OnInit {
 
   registros: WorkResponse[] = []
+  // variable para la vantana modal
+  modalSwitch: boolean = false
 
-  constructor(private service: WorkService) {}
+  datosParaActualizar!: WorkResponse
+
+  // Inyeccion de los servicios.
+  constructor(private workService: WorkService) {}
 
   ngOnInit() {
-    ////////? Falta definir el tipo de dato
-    this.service.Read().pipe(
+    // Mantener la comunicacion con el modal.
+    this.workService.$modal.subscribe(
+      (resp) => {this.modalSwitch = resp}
+    )
+
+    // Inicia la lista de registros
+    this.workService.Read().pipe(
 
       tap(response => this.registros = response.reverse()),
 
       catchError(async (error) => console.log(error))
     )
     .subscribe()
-    //////////? Falta definir el tipo de dato
   }
 
-  verRegistro(data: WorkResponse){
-    console.log(data)
+  abrirModal(registro: WorkResponse) {
+    this.modalSwitch = true
+    this.datosParaActualizar = registro
   }
 
 }

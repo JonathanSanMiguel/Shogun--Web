@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { EventEmitter, Injectable, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/services/auth.service';
 import { Observable, catchError, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -14,6 +14,8 @@ export class WorkService implements OnInit {
 
   Api_Uri: string = 'http://localhost:4000/gymkhana/crud'
   //Api_Uri: string = 'https://shogun-gymkhana-production.up.railway.app/gymkhana/crud'
+
+  $modal = new EventEmitter()
 
   ngOnInit(): void {
     this.userAuth
@@ -31,7 +33,7 @@ export class WorkService implements OnInit {
     const Url = `${this.Api_Uri}/works`
 
     // Guardo en la variable 'headers' el 
-    // JsonWebToken actual y lo nombro 'X-Token'
+    // JsonWebToken actual y lo nombra 'X-Token'
     const headers = new HttpHeaders().set(
       'X-Token', localStorage.getItem('JsonWebToken') || ''
     )
@@ -40,6 +42,7 @@ export class WorkService implements OnInit {
     return this.http.get<WorkResponse[]>(Url, {headers})
   }
 
+  // Metodo para crear un nuevo registro
   create(data: any) {
 
     const Url = `${this.Api_Uri}/create`

@@ -1,10 +1,17 @@
 <main class="gallery">
-    <div class="gallery__item animate__animated animate__zoomIn" *ngFor="let item of registros">
+    <div
+        *ngFor="let item of registros"
+        class="gallery__item animate__animated animate__zoomIn"
+        >
         <img
             src="{{item.image.secure_url}}"
             alt="portada"
             title="{{item.createdAt | date}}"
-            (click)="verRegistro(item)"
+            (click)="abrirModal(item)"
         >
     </div>
 </main>
+
+<div *ngIf="modalSwitch == true">
+    <app-modal [registro]="datosParaActualizar"></app-modal>
+</div>

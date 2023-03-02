@@ -1,1 +1,128 @@
-<p>modal works!</p>
+<div class="bgModal">
+
+    <div class="modalContent animate__animated animate__bounceIn">
+
+        <form class="formCreate" [formGroup]="formularioUpdate" (ngSubmit)="actualizar()">
+            <!-- DIV imagen -->
+            <div class="divCampo">
+                <label>
+                    <i class="fa-solid fa-image"></i>
+                    Imagen del Trabajo: 
+                </label>
+                <img src="{{registro.image.secure_url}}" alt="">
+                <input
+                    type="file"
+                    accept="image/jpeg, image/png"
+                    formControlName="image"
+                    (change)="validarImagen($event)"
+                    placeholder="Selecciona una imagen"
+                >
+                <br>
+                <span class="alerta" *ngIf="ValidarCampo('image')">
+                    *Debe subir una imagen
+                </span>
+            </div>
+
+            <!-- DIV nombre -->
+            <div class="divCampo">
+                <label>
+                    <i class="fa-solid fa-user"></i>
+                    Nombre del Cliente: 
+                </label>
+                <input
+                    type="text"
+                    formControlName="nombre"
+                    value="{{registro.nombre}}"
+                    placeholder="Ingrese el nombre"
+                >
+                <br>
+                <span class="alerta" *ngIf="ValidarCampo('nombre')">
+                    *Este Campo es Obligatorio
+                </span>
+            </div>
+
+            <!-- DIV descripcion -->
+            <div class="divCampo">
+                <label>
+                    <i class="fa-solid fa-comment-dots"></i>
+                    Descripcion:
+                </label>
+                <input
+                    type="text"
+                    formControlName="descripcion"
+                    value="{{registro.descripcion}}"
+                    placeholder="Ingrese la descripcion"
+                >
+                <br>
+                <span class="alerta" *ngIf="ValidarCampo('descripcion')">
+                    *Este campo es obligatorio
+                </span>
+            </div>
+
+            <!-- DIV fecha -->
+            <div class="divCampo">
+                <label>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Fecha de Finalizacion: 
+                </label>
+
+                <input
+                    type="date"
+                    formControlName="fecha"
+                    value="{{registro.fecha}}"
+                    placeholder="Ingrese la fecha"
+                >
+                <br>
+                <span class="alerta" *ngIf="ValidarCampo('fecha')">
+                    *Este Campo es Obligatorio
+                </span>
+            </div>
+
+            <!-- DIV folio -->
+            <div class="divCampo">
+                <label>
+                    <i class="fa-solid fa-hashtag"></i>
+                    Generar Folio:
+                </label>
+
+                <input
+                    type="number"
+                    value="{{registro.folio}}"
+                    placeholder="Genera un folio"
+                    readonly
+                >
+            </div>
+
+            <!-- DIV factura -->
+            <div class="divCampo">
+                <label>
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Factura: 
+                </label>
+                <input
+                    type="file"
+                    accept="application/pdf, application/msword"
+                    formControlName="factura"
+                    (change)="validarFactura($event)"
+                    placeholder="Ingrese el Salario"
+                >
+                <br>
+                <span class="alerta" *ngIf="ValidarCampo('factura')">
+                    *Debe subir una Factura .PDF o .Doc
+                </span>
+            </div>
+
+            
+
+
+            <button  type="submit">
+                Agregar <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+        </form>
+
+        <button type="button" (click)="cerrarModal()">
+            cerrar
+        </button>
+        
+    </div>
+</div>

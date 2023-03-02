@@ -16,13 +16,13 @@
     border-radius: 10px;
 }
 
+
+/* Input del Correo */
 .divCampo {
     flex: 1 0 240px;
     height: 80px;
     margin: 10px;
-}
-/* Input del Correo */
-.divCampo {
+
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 7px;
@@ -34,21 +34,38 @@
     margin-right: 5px;
     vertical-align: middle;
 }
+.divCampo label {
+    font-family: sans-serif;
+    font-size: 17px;
+}
 .divCampo input {
     display: inline;
     text-align: center;
     border: none;
     outline: none;
-    width: 90%;
+    width: 100%;
+    margin-top: 15px;
     font-size: 19px;
     vertical-align: middle;
 }
 
-.submit {
+button[type = submit] {
+    width: 100%;
     cursor: pointer;
-    border-radius: 20px;
-    background-color: greenyellow;
+    padding: 14px;
+    margin-top: 25px;
+    border-radius: 21px;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: rgb(43, 182, 64);
+    border: none;
 }
+button[type = submit]:hover {
+    background-color: green;
+    color: aliceblue;
+}
+
 
 /* .formCreate {
     margin-top: 2%;
