@@ -11,8 +11,8 @@
 
 
 .modalContent {
-    background-color: coral;
-    max-width: 700px;
+    background-color: #b92829;
+    max-width: 800px;
     border-radius: 20px;
 
     display: flex;
@@ -27,9 +27,22 @@
     border-radius: 10px;
 }
 
+.portada {
+    width: 100%;
+    max-height: 200px;
+}
+
 img {
-    max-width: 200px;
-    max-height: 300px;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+
+}
+span {
+    width: 50%;
+}
+h3 {
+    width: 50%;
 }
 
 /* Input del Correo */
@@ -65,7 +78,7 @@ img {
 }
 
 button[type = submit] {
-    width: 100%;
+    width: 50%;
     cursor: pointer;
     padding: 14px;
     margin-top: 25px;
@@ -79,4 +92,29 @@ button[type = submit] {
 button[type = submit]:hover {
     background-color: green;
     color: aliceblue;
+}
+
+button[type = button] {
+    width: 50%;
+    cursor: pointer;
+    padding: 14px;
+    margin-top: 25px;
+    border-radius: 21px;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: red;
+    border: none;
+}
+button[type = button]:hover {
+    background-color: rgb(128, 0, 0);
+    color: aliceblue;
+}
+
+.alerta{
+    color: red;
+    max-width: 100%;
+    font: 16px sans-serif;
+    border-radius: 5px;
+    padding: 2px;
 }

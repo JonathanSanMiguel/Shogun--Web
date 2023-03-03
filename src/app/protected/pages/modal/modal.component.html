@@ -3,25 +3,27 @@
     <div class="modalContent animate__animated animate__bounceIn">
 
         <form class="formCreate" [formGroup]="formularioUpdate" (ngSubmit)="actualizar()">
-            <!-- DIV imagen -->
+            <div class="portada">
+                <img src="{{registro.image.secure_url}}" alt="">
+                <h3>Registro creado el:</h3>
+                <span>{{registro.createdAt}}</span>
+            </div>
+
+            <!-- DIV folio -->
             <div class="divCampo">
                 <label>
-                    <i class="fa-solid fa-image"></i>
-                    Imagen del Trabajo: 
+                    <i class="fa-solid fa-hashtag"></i>
+                    Folio:
                 </label>
-                <img src="{{registro.image.secure_url}}" alt="">
+
                 <input
-                    type="file"
-                    accept="image/jpeg, image/png"
-                    formControlName="image"
-                    (change)="validarImagen($event)"
-                    placeholder="Selecciona una imagen"
+                    type="number"
+                    value="{{registro.folio}}"
+                    placeholder="Genera un folio"
+                    readonly
                 >
-                <br>
-                <span class="alerta" *ngIf="ValidarCampo('image')">
-                    *Debe subir una imagen
-                </span>
             </div>
+        
 
             <!-- DIV nombre -->
             <div class="divCampo">
@@ -32,7 +34,6 @@
                 <input
                     type="text"
                     formControlName="nombre"
-                    value="{{registro.nombre}}"
                     placeholder="Ingrese el nombre"
                 >
                 <br>
@@ -50,7 +51,6 @@
                 <input
                     type="text"
                     formControlName="descripcion"
-                    value="{{registro.descripcion}}"
                     placeholder="Ingrese la descripcion"
                 >
                 <br>
@@ -69,7 +69,6 @@
                 <input
                     type="date"
                     formControlName="fecha"
-                    value="{{registro.fecha}}"
                     placeholder="Ingrese la fecha"
                 >
                 <br>
@@ -78,26 +77,30 @@
                 </span>
             </div>
 
-            <!-- DIV folio -->
+            <!-- DIV imagen -->
             <div class="divCampo">
                 <label>
-                    <i class="fa-solid fa-hashtag"></i>
-                    Generar Folio:
+                    <i class="fa-solid fa-image"></i>
+                    Imagen del Trabajo: 
                 </label>
-
                 <input
-                    type="number"
-                    value="{{registro.folio}}"
-                    placeholder="Genera un folio"
-                    readonly
+                    type="file"
+                    accept="image/jpeg, image/png"
+                    formControlName="image"
+                    (change)="validarImagen($event)"
+                    placeholder="Selecciona una imagen"
                 >
+                <br>
+                <span class="alerta" *ngIf="ValidarCampo('image')">
+                    *Debe subir una imagen
+                </span>
             </div>
 
             <!-- DIV factura -->
             <div class="divCampo">
                 <label>
                     <i class="fa-solid fa-file-pdf"></i>
-                    Factura: 
+                    Cambiar la Factura: 
                 </label>
                 <input
                     type="file"
@@ -115,12 +118,15 @@
             
 
 
+            <button   type="button">
+                ELIMINAR <i class="fa-solid fa-trash-can"></i>
+            </button>
             <button  type="submit">
-                Agregar <i class="fa-solid fa-floppy-disk"></i>
+                Actualizar <i class="fa-solid fa-floppy-disk"></i>
             </button>
         </form>
 
-        <button type="button" (click)="cerrarModal()">
+        <button (click)="cerrarModal()">
             cerrar
         </button>
         
