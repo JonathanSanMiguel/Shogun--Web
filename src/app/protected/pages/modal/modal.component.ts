@@ -18,13 +18,13 @@ export class ModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
+
     // Crea un objeto de tipo date con el la fecha del registro.
     var fecha = new Date(this.registro.fecha)
-    
+
     const fechaISO = fecha.toISOString(); // formato ISO 8601: "YYYY-MM-DDTHH:mm:ss.sssZ"
     const fechaCorta = fechaISO.substring(0, 10); // "YYYY-MM-DD"
-    
+
     // Crea un objeto con los datos del @Input
     const datosDelRegistro = {
       //image: this.registro.image,
@@ -83,7 +83,7 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  
+
   ValidarCampo(campo: string) {
     return this.formularioUpdate.controls[campo].errors && this.formularioUpdate.controls[campo].touched
   }
@@ -93,5 +93,9 @@ export class ModalComponent implements OnInit {
     console.log(this.formularioUpdate.value)
   }
 
+
+  eliminarRegistro(id: any){
+    console.log(id)
+  }
 
 }
