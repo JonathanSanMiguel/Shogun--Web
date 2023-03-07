@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { WorkService } from '../../services/work.service';
 import { WorkResponse } from '../../interfaces/work.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -14,7 +15,8 @@ export class ModalComponent implements OnInit {
 
   constructor(
     private workService: WorkService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -94,8 +96,18 @@ export class ModalComponent implements OnInit {
   }
 
 
-  eliminarRegistro(id: any){
-    console.log(id)
-  }
+  eliminarRegistro(id: string){
+    const res = confirm('Estas seguro de borrar este Registro?')
 
+    if (res === true ) {
+      this.workService.Delete(id).subscribe(
+        res => {
+          if(res === true){
+            this.cerrarModal()
+            this.router.navigateByUrl('/dashboard/galery')
+          }
+        }
+      )
+    }
+  }
 }

@@ -42,6 +42,7 @@ export class WorkService implements OnInit {
     return this.http.get<WorkResponse[]>(Url, {headers})
   }
 
+
   // Metodo para crear un nuevo registro
   create(data: any) {
 
@@ -52,6 +53,25 @@ export class WorkService implements OnInit {
     )
 
     return this.http.post<WorkResponse>(Url, data, {headers}).pipe(
+
+      map(resp => resp.status),
+
+      catchError(err => of(err.error.message))
+    )
+  }
+
+
+  Update(){}
+
+
+  Delete(id: string){
+
+    const headers = new HttpHeaders().set(
+      'X-Token', localStorage.getItem('JsonWebToken') || ''
+    )
+
+    const Url = `${this.Api_Uri}/delete`
+    return this.http.delete<WorkResponse>(`${Url}/${id}`, {headers}).pipe(
 
       map(resp => resp.status),
 
