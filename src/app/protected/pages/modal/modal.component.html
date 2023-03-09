@@ -1,22 +1,25 @@
 <div class="bgModal">
-
-    <div class="modalContent animate__animated animate__bounceIn">
-
+    <div class="modalContent animate__animated animate__bounceIn">        
+        
         <form class="formCreate" [formGroup]="formularioUpdate" (ngSubmit)="actualizar()">
             <div class="portada">
-            
+                
                 <img src="{{registro.image.secure_url}}" alt="">
-
+                
                 <h3>Registro creado el:</h3>
                 <span>{{registro.createdAt}}</span>
-
+                
                 <h3>Registro ultima vez actualizado el:</h3>
                 <span>{{registro.updatedAt}}</span>
-
+                
             </div>
-
+            
             <!-- DIV folio -->
             <div class="divCampo">
+                <span>
+                    ver la factura
+                    <a target="_blank" title="ver la factura" href="{{registro.factura.secure_url}}">clic aqui</a>
+                </span>
                 <label>
                     <i class="fa-solid fa-hashtag"></i>
                     Folio:

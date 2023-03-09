@@ -3,6 +3,8 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { WorkService } from '../../services/work.service';
 import { WorkResponse } from '../../interfaces/work.interface';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-modal',
@@ -12,14 +14,16 @@ import { Router } from '@angular/router';
 export class ModalComponent implements OnInit {
 
   @Input() registro!: WorkResponse
-
+  urlSegura!: any
+  
   constructor(
     private workService: WorkService,
     private formBuilder: FormBuilder,
-    private router: Router
-  ) {}
-
-  ngOnInit(): void {
+    private router: Router,
+    private sanitizer: DomSanitizer
+    ) {}
+    
+    ngOnInit(): void {
 
     // Crea un objeto de tipo date con el la fecha del registro.
     var fecha = new Date(this.registro.fecha)
