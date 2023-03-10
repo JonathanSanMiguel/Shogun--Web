@@ -21,6 +21,30 @@
             </span>
         </div>
 
+        <!-- DIV folio -->
+        <div class="divCampo">
+            <label>
+                <i class="fa-solid fa-hashtag"></i>
+                Generar Folio:
+            </label>
+
+            <input
+                type="number"
+                value="{{folioGenerado}}"
+                formControlName="folio"
+                placeholder="Genera un folio"
+                readonly
+            >
+
+            <button type="button" (click)="generarFolio()">
+                Generar
+            </button>
+            <br>
+            <span class="alerta" *ngIf="ValidarCampo('folio')">
+                *Este campo es obligatorio
+            </span>
+        </div>
+
         <!-- DIV nombre -->
         <div class="divCampo">
             <label>
@@ -38,9 +62,14 @@
         <div class="divCampo">
             <label>
                 <i class="fa-solid fa-comment-dots"></i>
-                Descripcion:
+                Descripcion del trabajo:
             </label>
-            <input type="text" formControlName="descripcion" placeholder="Ingrese la descripcion">
+            <textarea
+                formControlName="descripcion"
+                placeholder="Ingrese la descripcion" 
+                rows="" cols=""
+            ></textarea>
+
             <br>
             <span class="alerta" *ngIf="ValidarCampo('descripcion')">
                 *Este campo es obligatorio
@@ -64,30 +93,6 @@
             <br>
             <span class="alerta" *ngIf="ValidarCampo('fecha')">
                 *Este Campo es Obligatorio
-            </span>
-        </div>
-
-        <!-- DIV folio -->
-        <div class="divCampo">
-            <label>
-                <i class="fa-solid fa-hashtag"></i>
-                Generar Folio:
-            </label>
-
-            <input
-                type="number"
-                value="{{folioGenerado}}"
-                formControlName="folio"
-                placeholder="Genera un folio"
-                readonly
-            >
-
-            <button type="button" (click)="generarFolio()">
-                Generar
-            </button>
-            <br>
-            <span class="alerta" *ngIf="ValidarCampo('folio')">
-                *Este campo es obligatorio
             </span>
         </div>
 

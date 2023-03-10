@@ -1,17 +1,16 @@
 <div class="bgModal">
     <div class="modalContent animate__animated animate__bounceIn">        
         
-        <form class="formCreate" [formGroup]="formularioUpdate" (ngSubmit)="actualizar()">
+        <form class="formUpdate" [formGroup]="formularioUpdate" (ngSubmit)="actualizar()">
             <div class="portada">
-                
                 <img src="{{registro.image.secure_url}}" alt="">
                 
-                <h3>Registro creado el:</h3>
-                <span>{{registro.createdAt}}</span>
-                
-                <h3>Registro ultima vez actualizado el:</h3>
-                <span>{{registro.updatedAt}}</span>
-                
+                <div class="span1">
+                    <h3>Registro Creado el:</h3>
+                    <span>{{registro.createdAt | date}}</span>
+                    <h3>Registro ultima vez Actualizado el:</h3>
+                    <span>{{registro.updatedAt | date}}</span>
+                </div>
             </div>
             
             <!-- DIV folio -->
@@ -55,13 +54,14 @@
             <div class="divCampo">
                 <label>
                     <i class="fa-solid fa-comment-dots"></i>
-                    Descripcion:
+                    Descripcion del trabajo:
                 </label>
-                <input
-                    type="text"
+                <textarea
                     formControlName="descripcion"
-                    placeholder="Ingrese la descripcion"
-                >
+                    placeholder="Ingrese la descripcion" 
+                    rows="" cols=""
+                ></textarea>
+    
                 <br>
                 <span class="alerta" *ngIf="ValidarCampo('descripcion')">
                     *Este campo es obligatorio
@@ -90,7 +90,7 @@
             <div class="divCampo">
                 <label>
                     <i class="fa-solid fa-image"></i>
-                    Imagen del Trabajo: 
+                    Cambiar la Imagen(Opcional): 
                 </label>
                 <input
                     type="file"
@@ -109,7 +109,7 @@
             <div class="divCampo">
                 <label>
                     <i class="fa-solid fa-file-pdf"></i>
-                    Cambiar la Factura: 
+                    Cambiar la Factura(Opcional): 
                 </label>
                 <input
                     type="file"
@@ -125,7 +125,6 @@
             </div>
 
 
-
             <button type="button" (click)="eliminarRegistro(registro._id)" >
                 ELIMINAR <i class="fa-solid fa-trash-can"></i>
             </button>
@@ -134,8 +133,13 @@
             </button>
         </form>
 
-        <button (click)="cerrarModal()">
-            cerrar
+        <button class="btnCerrar" (click)="cerrarModal()">
+            C            
+            E
+            R
+            R
+            A
+            R
         </button>
         
     </div>

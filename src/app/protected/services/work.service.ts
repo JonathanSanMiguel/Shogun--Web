@@ -61,7 +61,9 @@ export class WorkService implements OnInit {
   }
 
 
-  Update(){}
+  Update(registro: any){
+    console.log(registro);
+  }
 
 
   Delete(id: string){

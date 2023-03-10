@@ -11,16 +11,16 @@
 
 
 .modalContent {
-    background-color: #b92829;
+    background-color: #112f41;
     max-width: 800px;
     border-radius: 20px;
 
     display: flex;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
-.formCreate {
+.formUpdate {
     display: flex;
     padding: 30px;
     flex-wrap: wrap;
@@ -28,16 +28,37 @@
 }
 
 .portada {
+    background-color: #fff;
+    display: flex;/* alinea los elementos horizontalmente */
+    align-items: center;
+    /* flex-direction: row;  */
     width: 100%;
     max-height: 200px;
+    margin: 12px;
+    border-radius: 15px;
+}
+.portada img {
+    width: 50%;
+    height: 101%; 
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-img {
+.portada .span1 {
+    text-align: center;
     width: 50%;
     height: 100%;
-    object-fit: cover;
-
+    font-family: sans-serif;
 }
+textarea {
+    resize: none;
+    border: none;
+    width: 98%;
+    height: 55px;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+  
 
 /* Input del Correo */
 .divCampo {
@@ -45,7 +66,7 @@ img {
     height: 80px;
     margin: 10px;
 
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -96,13 +117,28 @@ button[type = button] {
     border-radius: 21px;
     font-family: sans-serif;
     font-size: 18px;
-    letter-spacing: 1px;
-    background-color: red;
+    letter-spacing: 2px;
+    background-color: #b80c09;
     border: none;
 }
 button[type = button]:hover {
     background-color: rgb(128, 0, 0);
     color: aliceblue;
+}
+
+.btnCerrar {
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 20px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fbfbff;
+}
+.btnCerrar:hover {
+    background-color: #040f16;
+    color: #fbfbff;
+    
 }
 
 .alerta{

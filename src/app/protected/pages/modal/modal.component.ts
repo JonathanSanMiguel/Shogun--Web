@@ -20,10 +20,9 @@ export class ModalComponent implements OnInit {
     private workService: WorkService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private sanitizer: DomSanitizer
-    ) {}
+  ) {}
     
-    ngOnInit(): void {
+  ngOnInit(): void {
 
     // Crea un objeto de tipo date con el la fecha del registro.
     var fecha = new Date(this.registro.fecha)
@@ -33,11 +32,9 @@ export class ModalComponent implements OnInit {
 
     // Crea un objeto con los datos del @Input
     const datosDelRegistro = {
-      //image: this.registro.image,
       nombre: this.registro.nombre,
       descripcion: this.registro.descripcion,
       fecha: fechaCorta
-      //factura: this.registro.factura
     }
     this.formularioUpdate.patchValue(datosDelRegistro)
   }
@@ -48,11 +45,11 @@ export class ModalComponent implements OnInit {
 
 
   formularioUpdate: FormGroup = this.formBuilder.group({
-    image: [, Validators.required],
+    image: [,],
     nombre: [, Validators.required],
     descripcion: [, Validators.required],
     fecha: [, Validators.required],
-    factura: [, Validators.required]
+    factura: [,]
   })
 
 
@@ -96,7 +93,11 @@ export class ModalComponent implements OnInit {
 
 
   actualizar(){
-    console.log(this.formularioUpdate.value)
+    if (this.formularioUpdate.invalid) {
+      this.formularioUpdate.markAllAsTouched()
+    } else {
+      this.workService.Update(this.formularioUpdate.value)
+    }
   }
 
 
