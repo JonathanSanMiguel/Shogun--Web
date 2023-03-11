@@ -2,8 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { WorkService } from '../../services/work.service';
 import { WorkResponse } from '../../interfaces/work.interface';
-import { Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -19,7 +17,6 @@ export class ModalComponent implements OnInit {
   constructor(
     private workService: WorkService,
     private formBuilder: FormBuilder,
-    private router: Router,
   ) {}
     
   ngOnInit(): void {
@@ -92,11 +89,26 @@ export class ModalComponent implements OnInit {
   }
 
 
-  actualizar(){
+  ActualizarRegistro(id: string){
     if (this.formularioUpdate.invalid) {
       this.formularioUpdate.markAllAsTouched()
     } else {
-      this.workService.Update(this.formularioUpdate.value)
+
+      const formData = new FormData()
+
+      formData.append('nombre', this.formularioUpdate.get('nombre')?.value)
+      formData.append('descripcion', this.formularioUpdate.get('descripcion')?.value)
+      formData.append('fecha', this.formularioUpdate.get('fecha')?.value)
+      formData.append('image', this.formularioUpdate.get('image')?.value)
+      formData.append('factura', this.formularioUpdate.get('factura')?.value)
+
+      this.workService.Update(id, formData).subscribe(
+        res => {
+          if(res === true){
+            this.cerrarModal()
+          }
+        }
+      )
     }
   }
 
@@ -109,7 +121,6 @@ export class ModalComponent implements OnInit {
         res => {
           if(res === true){
             this.cerrarModal()
-            this.router.navigateByUrl('/dashboard/galery')
           }
         }
       )

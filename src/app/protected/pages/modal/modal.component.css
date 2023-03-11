@@ -93,7 +93,8 @@ textarea {
 }
 
 button[type = submit] {
-    width: 50%;
+    margin: 0 5px;
+    width: 48%;
     cursor: pointer;
     padding: 14px;
     margin-top: 25px;
@@ -109,8 +110,10 @@ button[type = submit]:hover {
     color: aliceblue;
 }
 
+
 button[type = button] {
-    width: 50%;
+    margin: 0 4px;
+    width: 49%;
     cursor: pointer;
     padding: 14px;
     margin-top: 25px;

@@ -47,22 +47,36 @@ export class WorkService implements OnInit {
   create(data: any) {
 
     const Url = `${this.Api_Uri}/create`
+    
+    const headers = new HttpHeaders().set(
+      'X-Token', localStorage.getItem('JsonWebToken') || ''
+    )
+      
+    return this.http.post<WorkResponse>(Url, data, {headers}).pipe(
+      
+      map(resp => resp.status),
+      
+      catchError(err => of(err.error.message))
+    )
+  }
+      
+      
+  Update(id: string, registro: any) {
 
+    const Url = `${this.Api_Uri}/update`
+    
     const headers = new HttpHeaders().set(
       'X-Token', localStorage.getItem('JsonWebToken') || ''
     )
 
-    return this.http.post<WorkResponse>(Url, data, {headers}).pipe(
+    console.log(registro);
+
+    return this.http.put<WorkResponse>(`${Url}/${id}`, registro, {headers}).pipe(
 
       map(resp => resp.status),
 
       catchError(err => of(err.error.message))
     )
-  }
-
-
-  Update(registro: any){
-    console.log(registro);
   }
 
 
