@@ -2,6 +2,7 @@ export interface WorkResponse {
   status: boolean
   message: string
   usuarioId: string
+  usuarioNombre: string
   image: Image;
   factura: Image;
   _id: string;

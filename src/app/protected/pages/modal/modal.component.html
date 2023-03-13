@@ -2,8 +2,8 @@
     <div class="modalContent animate__animated animate__fadeInUp animate__faster">        
         <form class="formUpdate" [formGroup]="formularioUpdate" (ngSubmit)="ActualizarRegistro(registro._id)">
 
-            <div class="regCreated">
-                <span> Registro creado por: Jonathan Alexis </span>
+            <div class="regCreated" *ngIf="mostrarFirma()">
+                <span> Registro Creado Por: {{registro.usuarioNombre | titlecase}} </span>
             </div>
 
             <div class="portada">

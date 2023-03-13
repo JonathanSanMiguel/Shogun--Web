@@ -13,14 +13,15 @@ import Swal from 'sweetalert2';
 export class ModalComponent implements OnInit {
 
   @Input() registro!: WorkResponse
-  
+
   constructor(
     private workService: WorkService,
     private formBuilder: FormBuilder,
-  ) {}
+    ) {}
     
-  ngOnInit(): void {
-
+    ngOnInit(): void {
+    
+    // console.log(this.nombreValor);
     // Crea un objeto de tipo date con el la fecha del registro.
     var fecha = new Date(this.registro.fecha)
 
@@ -149,6 +150,14 @@ export class ModalComponent implements OnInit {
           }
         }
       )
+    }
+  }
+
+  mostrarFirma(){
+    if (this.workService.userAuth.nombre == 'Administrador') {
+      return true
+    } else {
+      return false
     }
   }
 

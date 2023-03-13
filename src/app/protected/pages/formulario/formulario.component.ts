@@ -109,8 +109,9 @@ export class FormularioComponent {
     } else {
 
       const formData = new FormData()
-      
+
       formData.append('usuarioId', this.usuario.uid)
+      formData.append('usuarioNombre', this.usuario.nombre)
       formData.append('image', this.formularioCreate.get('image')?.value)
       formData.append('nombre', this.formularioCreate.get('nombre')?.value)
       formData.append('descripcion', this.formularioCreate.get('descripcion')?.value)
