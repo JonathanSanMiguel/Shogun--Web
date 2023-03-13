@@ -117,6 +117,8 @@ export class FormularioComponent {
       formData.append('fecha', this.formularioCreate.get('fecha')?.value)
       formData.append('folio', this.formularioCreate.get('folio')?.value)
       formData.append('factura', this.formularioCreate.get('factura')?.value)
+
+      console.log(formData);
       
       this.service.create(formData).subscribe(
         resp => {

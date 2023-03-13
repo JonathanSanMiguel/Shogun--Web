@@ -13,7 +13,6 @@ import Swal from 'sweetalert2';
 export class ModalComponent implements OnInit {
 
   @Input() registro!: WorkResponse
-  urlSegura!: any
   
   constructor(
     private workService: WorkService,

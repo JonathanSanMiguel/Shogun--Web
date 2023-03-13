@@ -37,9 +37,12 @@ export class WorkService implements OnInit {
     const headers = new HttpHeaders().set(
       'X-Token', localStorage.getItem('JsonWebToken') || ''
     )
+    const userID = this.userAuth.uid
+    
+    const JWTuserID = { headers: headers, params: { userId: userID } };
 
     // Peticion con el Url del api, y el token del header.
-    return this.http.get<WorkResponse[]>(Url, {headers})
+    return this.http.get<WorkResponse[]>(Url, JWTuserID)
   }
 
 
@@ -69,8 +72,6 @@ export class WorkService implements OnInit {
       'X-Token', localStorage.getItem('JsonWebToken') || ''
     )
 
-    console.log(registro);
-
     return this.http.put<WorkResponse>(`${Url}/${id}`, registro, {headers}).pipe(
 
       map(resp => resp.status),
@@ -82,11 +83,12 @@ export class WorkService implements OnInit {
 
   Delete(id: string){
 
+    const Url = `${this.Api_Uri}/delete`
+
     const headers = new HttpHeaders().set(
       'X-Token', localStorage.getItem('JsonWebToken') || ''
     )
 
-    const Url = `${this.Api_Uri}/delete`
     return this.http.delete<WorkResponse>(`${Url}/${id}`, {headers}).pipe(
 
       map(resp => resp.status),
