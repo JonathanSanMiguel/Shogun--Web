@@ -2,6 +2,10 @@
     <div class="modalContent animate__animated animate__fadeInUp animate__faster">        
         <form class="formUpdate" [formGroup]="formularioUpdate" (ngSubmit)="ActualizarRegistro(registro._id)">
 
+            <div class="regCreated">
+                <span> Registro creado por: Jonathan Alexis </span>
+            </div>
+
             <div class="portada">
                 <img src="{{registro.image.secure_url}}" alt="">
                 
@@ -21,7 +25,7 @@
                 </div>
             </div>
             
-            <!-- DIV folio -->2
+            <!-- DIV folio -->
             <div class="divCampo">
                 <label>
                     <i class="fa-solid fa-hashtag"></i>

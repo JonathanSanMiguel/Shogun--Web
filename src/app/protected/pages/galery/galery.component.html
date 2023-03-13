@@ -1,3 +1,9 @@
+<div *ngIf="registros.length == 0" class="divVacio">
+    <div>
+        <h2>No has Agregado Registros Todavia</h2>
+    </div>
+</div>
+
 <main class="gallery">
     <div
         *ngFor="let item of registros"

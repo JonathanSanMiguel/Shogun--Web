@@ -6,8 +6,17 @@
     box-sizing: border-box;
 }
 
-.animate__animated.animate__zoomIn {
+.animate__animated .animate__zoomIn {
     --animate-duration: 0.5s;
+}
+
+.divVacio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    opacity: 0.5;
+    font-family: sans-serif;
 }
 
 img {
@@ -51,11 +60,9 @@ img {
     filter: grayscale(100%);
     opacity: 0.75;
 }
- .gallery__item:active {
+.gallery__item:active {
     filter: saturate(200%);
- }
-
-
+}
 .gallery__item:first-of-type {
     grid-column: 2 / span 2;
 }
