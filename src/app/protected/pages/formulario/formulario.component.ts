@@ -18,8 +18,15 @@ export class FormularioComponent {
     private router: Router
   ) {}
 
+  // Obtiene los datos del usuario
+  // que inicio sesion.
+  get usuario() {
+    return this.service.userAuth
+  }
+  
+  
   folioGenerado!: number
-
+  
   formularioCreate: FormGroup = this.formBuilder.group({
     image: [,
       [
@@ -57,7 +64,7 @@ export class FormularioComponent {
       ]
     ]
   })
-
+  
   // Metodo para validar el arhivo que se +
   // selecciona como 'Imagen'.
   validarImagen(event: any) {
@@ -74,7 +81,7 @@ export class FormularioComponent {
       }
     }
   }
-
+  
   validarFactura(event: any) {
     if (event.target.files && event.target.files.length > 0) {
       const fileF = event.target.files[0]
@@ -89,27 +96,28 @@ export class FormularioComponent {
       }
     }
   }
-
+  
   generarFolio(){
     this.folioGenerado = Math.floor(Math.random() * (1000000000 - 100000000) + 100000000)
-
+    
     this.formularioCreate.controls['folio'].setValue(this.folioGenerado)
   }
-
+  
   guardar(){
     if (this.formularioCreate.invalid) {
       this.formularioCreate.markAllAsTouched()
     } else {
 
       const formData = new FormData()
-
+      
+      formData.append('usuarioId', this.usuario.uid)
       formData.append('image', this.formularioCreate.get('image')?.value)
       formData.append('nombre', this.formularioCreate.get('nombre')?.value)
       formData.append('descripcion', this.formularioCreate.get('descripcion')?.value)
       formData.append('fecha', this.formularioCreate.get('fecha')?.value)
       formData.append('folio', this.formularioCreate.get('folio')?.value)
       formData.append('factura', this.formularioCreate.get('factura')?.value)
-
+      
       this.service.create(formData).subscribe(
         resp => {
           // Valida si la resp es 'true'.
@@ -123,7 +131,7 @@ export class FormularioComponent {
               showConfirmButton: false,
               timer: 2000
             })
-
+            
             // Redireccionara al usuario a la 'galeria'
             this.router.navigateByUrl('/dashboard/galery')
           } else {

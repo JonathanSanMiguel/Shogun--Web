@@ -20,21 +20,32 @@
     margin-top: 40px;
 }
 
+.regCreated {
+    width: 50%;
+    color: #fbfbff;
+    font-family: sans-serif;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
 .formUpdate {
     display: flex;
-    padding: 30px;
+    padding: 21px;
     flex-wrap: wrap;
     border-radius: 10px;
 }
 
 .portada {
-    background-color: #fff;
+    background-color: #fbfbff;
     display: flex;/* alinea los elementos horizontalmente */
     align-items: center;
     /* flex-direction: row;  */
     width: 100%;
     max-height: 200px;
-    margin: 12px;
+    margin-top: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     border-radius: 15px;
 }
 .portada img {
@@ -50,6 +61,10 @@
     height: 100%;
     font-family: sans-serif;
 }
+.span1 h3 {
+    margin: 13px;
+}
+
 textarea {
     resize: none;
     border: none;
@@ -60,7 +75,7 @@ textarea {
 }
   
 
-/* Input del Correo */
+/* Inputs */
 .divCampo {
     flex: 1 0 240px;
     height: 80px;
@@ -136,12 +151,13 @@ button[type = button]:hover {
     border: none;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: #fbfbff;
+    color: #fbfbff;
+    background-color: #040f16;
+    cursor: pointer;
 }
 .btnCerrar:hover {
-    background-color: #040f16;
-    color: #fbfbff;
-    
+    color: #040f16;
+    background-color: #fbfbff;   
 }
 
 .alerta{

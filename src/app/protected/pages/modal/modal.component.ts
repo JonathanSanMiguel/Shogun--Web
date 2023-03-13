@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { WorkService } from '../../services/work.service';
 import { WorkResponse } from '../../interfaces/work.interface';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -91,7 +92,9 @@ export class ModalComponent implements OnInit {
 
   ActualizarRegistro(id: string){
     if (this.formularioUpdate.invalid) {
+
       this.formularioUpdate.markAllAsTouched()
+      
     } else {
 
       const formData = new FormData()
@@ -105,25 +108,52 @@ export class ModalComponent implements OnInit {
       this.workService.Update(id, formData).subscribe(
         res => {
           if(res === true){
+
             this.cerrarModal()
+
+            this.refresh()
+            // Mandara una alerta si se actualizo.
+            // Swal.fire({
+            //   position: 'top-right',
+            //   icon: 'success',
+            //   title: 'Registro Actualizado',
+            //   showConfirmButton: false,
+            //   timer: 1000
+            // })
+
+          } else {
+            // SI hay error, mandara una alerta, con el error.
+            Swal.fire('Error', res, 'error')
           }
         }
       )
     }
   }
 
-
+  
   eliminarRegistro(id: string){
-    const res = confirm('Estas seguro de borrar este Registro?')
 
+    const res = confirm('¿Estas seguro de Borrar este Registro?')
+    
     if (res === true ) {
       this.workService.Delete(id).subscribe(
         res => {
           if(res === true){
+
             this.cerrarModal()
+
+            this.refresh()
+
+          } else {
+            // SI hay error, mandara una alerta, con el error.
+            Swal.fire('Error', res, 'error')
           }
         }
       )
     }
+  }
+
+  refresh() {
+    window.location.reload();
   }
 }

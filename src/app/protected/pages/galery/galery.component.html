@@ -6,7 +6,12 @@
         <img
             src="{{item.image.secure_url}}"
             alt="portada"
-            title="{{item.createdAt | date}}"
+            title=
+            "
+Folio: {{item.folio}}
+Cliente: {{item.nombre}}
+Registro Creado el: {{item.createdAt | date}}
+            "
             (click)="abrirModal(item)"
         >
     </div>

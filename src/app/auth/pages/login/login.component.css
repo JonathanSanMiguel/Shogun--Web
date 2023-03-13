@@ -7,7 +7,7 @@ h1{
 
 /* Input del Correo */
 .divCorreo {
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -15,7 +15,6 @@ h1{
 }
 .divCorreo i {
     display: inline;
-    color: #999;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -31,7 +30,7 @@ h1{
 
 /* Input de la Contraseña */
 .divPassword {
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -39,7 +38,6 @@ h1{
 }
 .divPassword i {
     display: inline;
-    color: #999;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -65,8 +63,8 @@ h1{
     text-transform: uppercase;
     border-radius: 15px;
     border: none;
-    color: rgb(255, 255, 255);
-    background-color: rgb(106, 119, 160);
+    color: #fbfbff;
+    background-color: #112f41;
     margin-top: 55px;
     margin-bottom: 6%;
     cursor: pointer;
@@ -75,7 +73,7 @@ h1{
     background-color: rgb(30, 39, 141);
 }
 .BotonIniciarSesion:active{
-    background-color: aliceblue;
+    background-color: #fbfbff;
     color: black;
 }
 

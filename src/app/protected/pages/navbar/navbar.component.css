@@ -16,9 +16,9 @@ nav {
 }
 
 .nav-left button {
-    background-color: #b92829;
+    background-color: #19425c;
     border: none;
-    color: #fff;
+    color: #e8e7e7;
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -31,7 +31,7 @@ nav {
     cursor: pointer;
 }
 .nav-left button:hover {
-    background-color: #7b1c1c;
+    background-color: #112f41;
 }
 
 .nav-right {

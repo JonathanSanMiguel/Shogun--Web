@@ -1,7 +1,9 @@
-<div class="bgModal">
-    <div class="modalContent animate__animated animate__bounceIn">        
-        
+<div class="bgModal animate__animated animate__fadeIn">
+    <div class="modalContent animate__animated animate__fadeInUp animate__faster">        
         <form class="formUpdate" [formGroup]="formularioUpdate" (ngSubmit)="ActualizarRegistro(registro._id)">
+<!-- 
+            <span class="regCreated">Registro creado por: Jonathan Alexis Guerrero</span> -->
+
             <div class="portada">
                 <img src="{{registro.image.secure_url}}" alt="">
                 
@@ -11,8 +13,11 @@
                     <h3>Registro ultima vez Actualizado el:</h3>
                     <span>{{registro.updatedAt | date}}</span>
                     <br>
-                    <span>
-                        Ver la factura
+                    <br>
+                    <br>
+                    <span class="verfactura">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <strong> Para ver la factura: </strong>
                         <a target="_blank" href="{{registro.factura.secure_url}}">Clic Aqui</a>
                     </span>
                 </div>

@@ -7,7 +7,7 @@ h2{
 
 /* Input Nombre */
 .divNombre {
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -15,7 +15,6 @@ h2{
 }
 .divNombre i {
     display: inline;
-    color: #999;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -31,7 +30,7 @@ h2{
 
 /* Input Apellido */
 .divApellido {
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -39,7 +38,6 @@ h2{
 }
 .divApellido i {
     display: inline;
-    color: #999;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -55,7 +53,7 @@ h2{
 
 /* Input Correo */
 .divCorreo {
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -63,7 +61,6 @@ h2{
 }
 .divCorreo i {
     display: inline;
-    color: #999;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -79,7 +76,7 @@ h2{
 
 /* Input de la Contraseña */
 .divPassword {
-    background-color: #fff;
+    background-color: #fbfbff;
     border: 2px solid #ccc;
     border-radius: 7px;
     padding: 7px;
@@ -87,7 +84,6 @@ h2{
 }
 .divPassword i {
     display: inline;
-    color: #999;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -103,9 +99,6 @@ h2{
 ::placeholder {
     opacity: 0.6;
 }
-input:invalid {
-    border: 2px solid red;
-}
 
 /* Boton para Registrarse */
 .BotonRegistrarse{
@@ -116,8 +109,8 @@ input:invalid {
     letter-spacing: 2px;
     border-radius: 15px;
     border: none;
-    color: rgb(255, 255, 255);
-    background-color: rgb(106, 119, 160);
+    color: #fbfbff;
+    background-color: #112f41;
     margin-top: 50px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -126,7 +119,7 @@ input:invalid {
     background-color: rgb(17, 9, 131);
 }
 .BotonRegistrarse:active{
-    background-color: aliceblue;
+    background-color: #fbfbff;
     color: black;
 }
 

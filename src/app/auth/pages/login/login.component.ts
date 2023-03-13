@@ -19,14 +19,14 @@ export class LoginComponent {
 
   // FormGroup Reactivo para los campos del Login.
   formularioLogin: FormGroup = this.formbuilder.group({
-    email: ['ashe@correo.com',
+    email: [,
       [
         Validators.required,
         Validators.email,
         Validators.maxLength(30)
       ]
     ],
-    password: ['bobhazalgo', 
+    password: [, 
       [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9]*$'),
