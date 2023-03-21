@@ -50,16 +50,16 @@ img {
 .gallery:hover img {
     filter: grayscale();
 }
-
+*/
 .gallery__item img:hover {
     filter: brightness(1.1);
     transform: scale(1.05);
-} */
+} 
 
-.gallery:hover .gallery__item:not(:hover){
+/* .gallery:hover .gallery__item:not(:hover){
     filter: grayscale(100%);
     opacity: 0.75;
-}
+} */
 .gallery__item:active {
     filter: saturate(200%);
 }

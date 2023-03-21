@@ -104,14 +104,14 @@
             </label>
             <input
                 type="file"
-                accept="application/pdf, application/msword"
+                accept="application/pdf"
                 formControlName="factura"
                 (change)="validarFactura($event)"
                 placeholder="Ingrese el Salario"
             >
             <br>
             <span class="alerta" *ngIf="ValidarCampo('factura')">
-                *Debe subir una Factura .PDF o .Doc
+                *Debe subir una Factura .PDF
             </span>
         </div>
 
