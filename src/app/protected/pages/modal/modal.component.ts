@@ -72,7 +72,7 @@ export class ModalComponent implements OnInit {
   validarFactura(event: any) {
     if (event.target.files && event.target.files.length > 0) {
       const fileF = event.target.files[0]
-      if (fileF && (fileF.type === 'application/pdf' || fileF.type === 'application/msword')) {
+      if (fileF && (fileF.type === 'application/pdf')) {
         this.formularioUpdate.patchValue({
           factura: fileF,
         })

@@ -23,6 +23,7 @@ h1{
     text-align: center;
     border: none;
     outline: none;
+    background: none;
     width: 90%;
     font-size: 19px;
     vertical-align: middle;
@@ -45,6 +46,7 @@ h1{
     display: inline;
     text-align: center;
     border: none;
+    background: none;
     outline: none;
     width: 90%;
     font-size: 19px;
