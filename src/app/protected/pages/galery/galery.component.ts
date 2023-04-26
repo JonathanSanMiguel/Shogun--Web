@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkService } from '../../services/work.service';
-import { catchError, tap } from 'rxjs';
+//import { catchError, tap } from 'rxjs';
 import { WorkResponse } from '../../interfaces/work.interface';
 
 @Component({
@@ -25,14 +25,18 @@ export class GaleryComponent implements OnInit {
       (resp) => {this.modalSwitch = resp}
     )
 
-    // Inicia la lista de registros
-    this.workService.Read().pipe(
-
-      tap(response => this.registros = response.reverse()),
-
-      catchError(async (error) => console.log(error))
+    this.workService.Read().subscribe(
+      (response) => { this.registros = response.reverse() }
     )
-    .subscribe()
+
+    // Inicia la lista de registros
+    // this.workService.Read().pipe(
+
+    //   tap(response => this.registros = response.reverse()),
+
+    //   catchError(async (error) => console.log(error))
+    // )
+    // .subscribe()
   }
 
   abrirModal(registro: WorkResponse) {

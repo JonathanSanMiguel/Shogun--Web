@@ -17,9 +17,9 @@ export class ModalComponent implements OnInit {
   constructor(
     private workService: WorkService,
     private formBuilder: FormBuilder,
-    ) {}
+  ) {}
     
-    ngOnInit(): void {
+  ngOnInit(): void {
     
     // console.log(this.nombreValor);
     // Crea un objeto de tipo date con el la fecha del registro.

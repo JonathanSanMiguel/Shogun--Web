@@ -1,10 +1,4 @@
-<div *ngIf="registros.length == 0" class="divVacio">
-    <div>
-        <h2>No has Agregado Registros Todavia</h2>
-    </div>
-</div>
-
-<main class="gallery">
+<main *ngIf="registros.length > 0; else divVacio" class="gallery">
     <div
         *ngFor="let item of registros"
         class="gallery__item animate__animated animate__zoomIn"
@@ -22,6 +16,12 @@ Registro Creado el: {{item.createdAt | date}}
         >
     </div>
 </main>
+
+<ng-template #divVacio>
+    <div class="divVacio">
+        <h2>No has Agregado Registros Todavia</h2>
+    </div>
+</ng-template>
 
 <div *ngIf="modalSwitch == true">
     <app-modal [registro]="datosParaActualizar"></app-modal>
